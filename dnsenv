@@ -1,0 +1,19 @@
+#############################################################
+# Script Name	: probeenv									#
+# Description	: Environment File for  SpectaProbe			#
+# DATE 			: 19-02-2016								#
+# AUTHOR		: Debashis.									#
+# NOTE			: To Compile Probe For Diffrent Interfaces 	#
+#															#
+# Copyright (c) 2016, Pinnacle Digital (P) Ltd. New-Delhi	# 
+#############################################################
+
+DNS_VER=0.0.1
+DNS_ROOT=/home/specta/workspace/DnsIdentification
+DNS_CONF=${DNS_ROOT}/config
+
+export DNS_VER
+export DNS_ROOT
+export DNS_CONF
+
+export LD_LIBRARY_PATH="/usr/local/lib:$LD_LIBRARY_PATH"
