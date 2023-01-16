@@ -37,9 +37,9 @@ class Hyderabad
 
 		void			startHyderabadFun();
 		uint64_t		readHyderabadResolvedIp(char *fileName);
-		bool			dnsMapHyderabadData(std::map<uint16_t, std::string> &appMap, uint16_t id, uint16_t mapIndex);
+		void			dnsMapHyderabadData(std::map<uint16_t, std::string> &appMap, uint16_t appId, std::map<uint32_t, std::string> &barodaMap);
 		void			updateHyderabadResolvedIp(uint32_t ipr, string URL);
-		void			updateHyderabadMapData(string url , string keyword, uint16_t appId);
+		bool			checkUrl(std::map<uint16_t, std::string> &appMap, string url, uint16_t appID);
 
 		std::map<uint32_t, std::string> hyderabadResolvedIpMap[10];
 		std::map<std::string, uint16_t> dnsLookUpHyderabadData[57];

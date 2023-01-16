@@ -9,7 +9,7 @@
 #############################################################
 
 DNS_VER=0.0.1
-DNS_ROOT=/home/specta/workspace/DnsIdentification
+DNS_ROOT=/home/jyoti/Test/DnsIdentification
 DNS_CONF=${DNS_ROOT}/config
 
 export DNS_VER

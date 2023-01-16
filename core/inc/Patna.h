@@ -37,9 +37,10 @@ class Patna
 
 		void			startPatnaFun();
 		uint64_t		readPatnaResolvedIp(char *fileName);
-		bool			dnsMapPatnaData(std::map<uint16_t, std::string> &appMap, uint16_t id, uint16_t mapIndex);
+
+		void			dnsMapPatnaData(std::map<uint16_t, std::string> &appMap, uint16_t appId, std::map<uint32_t, std::string> &barodaMap);
 		void			updatePatnaResolvedIp(uint32_t ipr, string URL);
-		void			updatePatnaMapData(string url , string keyword, uint16_t appId);
+		bool			checkUrl(std::map<uint16_t, std::string> &appMap, string url, uint16_t appID);
 
 		std::map<uint32_t, std::string> patnaResolvedIpMap[10];
 		std::map<std::string, uint16_t> dnsLookUpPatnaData[57];

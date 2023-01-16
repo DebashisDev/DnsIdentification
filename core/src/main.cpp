@@ -56,149 +56,124 @@ int main()
 {
 	bool	ret = false;
 	utilities *util = new utilities();
+	util->openDnsKeyFile((char *)"dnsKeyword.conf");
+	util->readKeyWord();
+	util->closeDnsKeyFile();
 	util->populateAppId();
 
 	/* Baroda thread*/
 	Baroda *baroda = new Baroda();
 
 	pthread_create(&baroda->barodaThr, NULL, startBaroda, (void *)baroda);
-	pinThread(baroda->barodaThr, 42);
+	pinThread(baroda->barodaThr,util->Baroda_Cpu_Core);
 
 	/*Rajkot Thread*/
 	Rajkot *rajkot = new Rajkot();
 
 	pthread_create(&rajkot->rajkotThr, NULL, startRajkot, (void *)rajkot);
-	pinThread(rajkot->rajkotThr, 31);
+	pinThread(rajkot->rajkotThr, util->Rajkot_Cpu_Core);
 
 	/*Surat Thread*/
 	Surat *surat = new Surat();
 
 	pthread_create(&surat->suratThr, NULL, startSurat, (void *)surat);
-	pinThread(surat->suratThr, 2);
+	pinThread(surat->suratThr,util->Surat_Cpu_Core);
 
 	/*Patna Thread*/
 	Patna *patna = new Patna();
 
 	pthread_create(&patna->patnaThr, NULL, startPatna, (void *)patna);
-	pinThread(patna->patnaThr, 3);
+	pinThread(patna->patnaThr, util->Patna_Cpu_Core);
 
 	/*Hyderabad Thread*/
 	Hyderabad *hyd = new Hyderabad();
 
 	pthread_create(&hyd->hyderabadThr, NULL, startHyderabad, (void *)hyd);
-	pinThread(hyd->hyderabadThr, 4);
+	pinThread(hyd->hyderabadThr, util->Hyd_Cpu_Core);
 
 	while(true)
 	{
 		printf("Parent Thread ..\n");
 		sleep(50);
 
-		printf("BarodaFlag : %d\n",
-				baroda->barodaFlag/*,rajkot->rajkotFlag,surat->suratFlag,patna->patnaFlag,hyd->hyderabadFlag*/);
+		printf("BarodaFlag =  %d : RajkotFlag = %d : SuratFlag = %d : PatnaFlag = %d : HyderabadFlag = %d \n ",
+				baroda->barodaFlag,rajkot->rajkotFlag,surat->suratFlag,patna->patnaFlag,hyd->hyderabadFlag);
+
+		if(baroda->barodaFlag && rajkot->rajkotFlag && surat->suratFlag && patna->patnaFlag /*&& hyd->hyderabadFlag*/)
+		{
+			/*Baroda Data Dump*/
+
+			baroda->outFile.open("BarodaAppDnsData.csv", ios::app);
+			printf("Start Dumping of Baroda Data.....\n");
+
+			for(uint16_t mapIndex = 0; mapIndex < 10; mapIndex++)
+			{
+				for(auto elem1 : baroda->barodaResolvedIpMap[mapIndex])
+					baroda->outFile << elem1.second << "| " << "IP2IP" << endl ;
+			}
+
+			printf("Dumping Of Baroda Data is Done.....\n");
+			baroda->outFile.close();
+
+			/*Rajkot Data Dump*/
+
+			rajkot->outFile.open("RajkotAppDnsData.csv", ios::app);
+			printf("Start Dumping of Rajkot Data.....\n");
+
+			for(uint16_t mapIndex = 0; mapIndex < 10; mapIndex++)
+			{
+				for(auto elem1 : rajkot->rajkotResolvedIpMap[mapIndex])
+					rajkot->outFile << elem1.second << "| " << "IP2IP" << endl ;
+			}
+
+			printf("Dumping Of Rajkot Data is Done.....\n");
+			rajkot->outFile.close();
 
 
+			/*Surat Data Dump*/
 
-//		if(baroda->barodaFlag /*&& rajkot->rajkotFlag && surat->suratFlag && patna->patnaFlag && hyd->hyderabadFlag */)
-//		{
-//			/*Baroda Data Dump*/
-//
-//			baroda->outFile.open("DnsMergeAppData.csv", ios::app);
-//			printf("Start Dumping of Baroda Data.....\n");
-//
-//			for(uint16_t mapIndex = 0; mapIndex < 57; mapIndex++)
-//			{
-//				for(auto elem : baroda->dnsLookUpBarodaData[mapIndex])
-//					baroda->outFile << elem.first <<"| " << util->appId[elem.second] <<endl ;
-//			}
-//			for(uint16_t mapIndex = 0; mapIndex < 10; mapIndex++)
-//			{
-//				for(auto elem1 : baroda->barodaResolvedIpMap[mapIndex])
-//					baroda->outFile << elem1.second << "| " << "IP2IP" << endl ;
-//			}
-//
-//			printf("Dumping Of Baroda Data is Done.....\n");
-//			baroda->outFile.close();
-//
-//			/*Rajkot Data Dump*/
-//
-//			rajkot->outFile.open("DnsMergeAppData.csv", ios::app);
-//			printf("Start Dumping of Rajkot Data.....\n");
-//
-//			for(uint16_t mapIndex = 0; mapIndex < 57; mapIndex++)
-//			{
-//				for(auto elem : rajkot->dnsLookUpRajkotData[mapIndex])
-//					rajkot->outFile << elem.first <<"| " << util->appId[elem.second] <<endl ;
-//			}
-//			for(uint16_t mapIndex = 0; mapIndex < 10; mapIndex++)
-//			{
-//				for(auto elem1 : rajkot->rajkotResolvedIpMap[mapIndex])
-//					rajkot->outFile << elem1.second << "| " << "IP2IP" << endl ;
-//			}
-//
-//			printf("Dumping Of Rajkot Data is Done.....\n");
-//			rajkot->outFile.close();
-//
-//			/*Surat Data Dump*/
-//
-//			surat->outFile.open("DnsMergeAppData.csv", ios::app);
-//			printf("Start Dumping of Surat Data.....\n");
-//
-//			for(uint16_t mapIndex = 0; mapIndex < 57; mapIndex++)
-//			{
-//				for(auto elem : surat->dnsLookUpSuratData[mapIndex])
-//					surat->outFile << elem.first <<"| " << util->appId[elem.second] <<endl ;
-//			}
-//			for(uint16_t mapIndex = 0; mapIndex < 10; mapIndex++)
-//			{
-//				for(auto elem1 : surat->suratResolvedIpMap[mapIndex])
-//					surat->outFile << elem1.second << "| " << "IP2IP" << endl ;
-//			}
-//
-//			printf("Dumping Of Surat Data is Done.....\n");
-//			surat->outFile.close();
-//
-//
-//			/*Patna Data Dump*/
-//
-//			patna->outFile.open("DnsMergeAppData.csv", ios::app);
-//			printf("Start Dumping of patna Data.....\n");
-//
-//			for(uint16_t mapIndex = 0; mapIndex < 57; mapIndex++)
-//			{
-//				for(auto elem : patna->dnsLookUpPatnaData[mapIndex])
-//					patna->outFile << elem.first <<"| " << util->appId[elem.second] <<endl ;
-//			}
-//			for(uint16_t mapIndex = 0; mapIndex < 10; mapIndex++)
-//			{
-//				for(auto elem1 : patna->patnaResolvedIpMap[mapIndex])
-//					patna->outFile << elem1.second << "| " << "IP2IP" << endl ;
-//			}
-//
-//			printf("Dumping Of patna Data is Done.....\n");
-//			patna->outFile.close();
-//
-//			/*Hyderabad Data Dump*/
-//
-//			hyd->outFile.open("DnsMergeAppData.csv", ios::app);
-//			printf("Start Dumping of Hyderabad Data.....\n");
-//
-//			for(uint16_t mapIndex = 0; mapIndex < 57; mapIndex++)
-//			{
-//				for(auto elem : hyd->dnsLookUpHyderabadData[mapIndex])
-//					hyd->outFile << elem.first <<"| " << util->appId[elem.second] <<endl ;
-//			}
-//			for(uint16_t mapIndex = 0; mapIndex < 10; mapIndex++)
-//			{
-//				for(auto elem1 : hyd->hyderabadResolvedIpMap[mapIndex])
-//					hyd->outFile << elem1.second << "| " << "IP2IP" << endl ;
-//			}
-//
-//			printf("Dumping Of hyderabad Data is Done.....\n");
-//			hyd->outFile.close();
-//
-//			exit(1);
-//		}
+			surat->outFile.open("SuratAppDnsData.csv", ios::app);
+			printf("Start Dumping of Surat Data.....\n");
 
+			for(uint16_t mapIndex = 0; mapIndex < 10; mapIndex++)
+			{
+				for(auto elem1 : surat->suratResolvedIpMap[mapIndex])
+					surat->outFile << elem1.second << "| " << "IP2IP" << endl ;
+			}
+
+			printf("Dumping Of Surat Data is Done.....\n");
+			surat->outFile.close();
+
+			/*Patna Data Dump*/
+
+			patna->outFile.open("PatnaAppDnsData.csv", ios::app);
+			printf("Start Dumping of patna Data.....\n");
+
+			for(uint16_t mapIndex = 0; mapIndex < 10; mapIndex++)
+			{
+				for(auto elem1 : patna->patnaResolvedIpMap[mapIndex])
+					patna->outFile << elem1.second << "| " << "IP2IP" << endl ;
+			}
+
+			printf("Dumping Of patna Data is Done.....\n");
+			patna->outFile.close();
+
+			/*Hyderabad Data Dump*/
+
+			hyd->outFile.open("HyderabadAppDnsData.csv", ios::app);
+			printf("Start Dumping of Hyderabad Data.....\n");
+
+			for(uint16_t mapIndex = 0; mapIndex < 10; mapIndex++)
+			{
+				for(auto elem1 : hyd->hyderabadResolvedIpMap[mapIndex])
+					hyd->outFile << elem1.second << "| " << "IP2IP" << endl ;
+			}
+
+			printf("Dumping Of hyderabad Data is Done.....\n");
+			hyd->outFile.close();
+
+			exit(1);
+		}
 	}
 }
 

@@ -37,12 +37,11 @@ class Rajkot
 
 		void			startRajkotFun();
 		uint64_t		readRajkotResolvedIp(char *fileName);
-		bool			dnsMapRajkotData(std::map<uint16_t, std::string> &appMap, uint16_t id, uint16_t mapIndex);
+		void			dnsMapRajkotData(std::map<uint16_t, std::string> &appMap, uint16_t appId, std::map<uint32_t, std::string> &barodaMap);
 		void			updateRajkotResolvedIp(uint32_t ipr, string URL);
-		void			updateRajkotMapData(string url , string keyword, uint16_t appId);
+		bool			checkUrl(std::map<uint16_t, std::string> &appMap, string url, uint16_t appID);
 
 		std::map<uint32_t, std::string> rajkotResolvedIpMap[10];
-		std::map<std::string, uint16_t> dnsLookUpRajkotData[57];
 };
 
 #endif /* DNSIDENTIFICATION_CORE_SRC_RAJKOT1_H_ */

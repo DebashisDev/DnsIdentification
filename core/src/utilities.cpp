@@ -194,6 +194,57 @@ void utilities::readKeyWord()
 			printf("Hyderabad Dns Path = %s\n", hyderabadDnsPath.c_str());
 		}
 
+		if(Key.compare("BARODA_CPU_CORE") == 0)
+		{
+			fp >> Value;
+
+			Baroda_Cpu_Core = stoi(Value);
+
+			printf("Baroda cpu core = %d\n", Baroda_Cpu_Core);
+
+		}
+
+		if(Key.compare("RAJKOT_CPU_CORE") == 0)
+		{
+			fp >> Value;
+
+			Rajkot_Cpu_Core = stoi(Value);
+
+			printf("Rajkot cpu core = %d\n", Rajkot_Cpu_Core);
+
+		}
+
+		if(Key.compare("SURAT_CPU_CORE") == 0)
+		{
+			fp >> Value;
+
+			Surat_Cpu_Core = stoi(Value);
+
+			printf("Surat cpu core = %d\n", Surat_Cpu_Core);
+
+		}
+
+		if(Key.compare("PATNA_CPU_CORE") == 0)
+		{
+			fp >> Value;
+
+			Patna_Cpu_Core = stoi(Value);
+
+			printf("Patna cpu core = %d\n", Patna_Cpu_Core);
+
+		}
+
+
+		if(Key.compare("HYD_CPU_CORE") == 0)
+		{
+			fp >> Value;
+
+			Hyd_Cpu_Core = stoi(Value);
+
+			printf("Baroda cpu core = %d\n", Hyd_Cpu_Core);
+
+		}
+
 
 		if(Key.compare("Music") == 0)
 		{

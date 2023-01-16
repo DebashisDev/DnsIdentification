@@ -24,16 +24,15 @@ Baroda::~Baroda()
 	delete(util);
 }
 
-
 void Baroda::startBarodaFun()
 {
 	barodaFlag= false;
 	completePath[0] = 0;
-	outFile.open("DnsMergeAppData.csv", ios::app);
 
+	outFile.open("BarodaAppDnsData.csv", ios::app);
 
 #ifdef _BARODA
-	printf(" Start Processing Baroda Thread .. Time : %s \n", util->timerfunc());
+	printf("Start Processing Baroda Thread .. Time : %s \n", util->timerfunc());
 
 	util->openDnsKeyFile((char *)"dnsKeyword.conf");
 	util->readKeyWord();
@@ -116,31 +115,20 @@ void Baroda::startBarodaFun()
 	barodaFlag= true;
 #endif
 
-//	outFile.close();
+	outFile.close();
 	while(true)
 	{
-		sleep (5);
+		sleep (50);
 
 		if(barodaFlag)
 		{
-			barodaFlag = false;
-			for(uint16_t mapIndex = 0; mapIndex <= 9; mapIndex++)
-			{
-				for (auto it = barodaResolvedIpMap[mapIndex].cbegin(), next_it = it; it != barodaResolvedIpMap[mapIndex].cend(); it = next_it)
-				{
-					outFile << it->second <<"," << "IP2IP" <<endl;
-					++next_it;
-					barodaResolvedIpMap[mapIndex].erase(it);
-				}
-				printf("After Cleanup Remaining Size of barodaResolvedIpMap Index %02d = %02d....\n", mapIndex, barodaResolvedIpMap[mapIndex].size());
-			}
+			printf("Baroda Child Completed the Process ..\n");
 		}
 	}
 }
 
 void Baroda::dnsMapBarodaData(std::map<uint16_t, std::string> &appMap, uint16_t appID, std::map<uint32_t, std::string> &barodaMap)
 {
-	bool found = false;
 
 	for (auto it = barodaMap.cbegin(), next_it = it; it != barodaMap.cend(); it = next_it)
 	{
@@ -172,12 +160,6 @@ bool Baroda::checkUrl(std::map<uint16_t, std::string> &appMap, string url, uint1
 	return false;
 }
 
-void Baroda::updateBarodaMapData(string url , string keyword, uint16_t appID)
-{
-	outFile << url <<"," << keyword <<endl ;
-//	dnsLookUpBarodaData[appID][url] = appID;
-}
-
 uint64_t Baroda::readBarodaResolvedIp(char *fileName)
 {
 	uint16_t	urlLen = 50;
@@ -193,8 +175,8 @@ uint64_t Baroda::readBarodaResolvedIp(char *fileName)
 			ip = line.substr(0, index);
 			url = line.substr(index+1);
 
-			if(url.size() > urlLen)
-				url.erase(0, (url.size() - urlLen));
+			if(url.size() > 20)
+				url.erase(0, (url.size() - 20));
 
 			util->ipToLong((char *)ip.c_str() , &ipAdd);
 			updateBarodaResolvedIp(ipAdd , url);

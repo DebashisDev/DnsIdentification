@@ -27,18 +27,23 @@ class utilities
 		string		barodaDnsPath;
 		string		getFileName();
 		string		getBarodaPath();
+		uint16_t 	Baroda_Cpu_Core = 0;
 
 		string 		rajkotDnsPath;
 		string 		getRajkotPath();
+		uint16_t 	Rajkot_Cpu_Core = 0;
 
 		string 		patnaDnsPath;
 		string 		getPatnaPath();
+		uint16_t 	Surat_Cpu_Core = 0;
 
 		string 		suratDnsPath;
 		string		getSuratPath();
+		uint16_t 	Patna_Cpu_Core = 0;
 
 		string		hyderabadDnsPath;
 		string 		getHyderabadPath();
+		uint16_t	Hyd_Cpu_Core = 0;
 
 		void 		openDnsKeyFile(char *fileName);
 		void 		pinThread(pthread_t th, uint16_t i);
