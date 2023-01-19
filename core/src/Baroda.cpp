@@ -148,9 +148,7 @@ bool Baroda::checkUrl(std::map<uint16_t, std::string> &appMap, string url, uint1
 {
 	for (auto it = appMap.cbegin(), next_it = it; it != appMap.cend(); it = next_it)
 	{
-		barodaIndex = url.find(it->second);
-
-		if(barodaIndex > 0)
+		if(strstr(url.c_str(), it->second.c_str()))
 		{
 			outFile << url <<"," << util->appId[appID] <<endl ;
 			return true;
@@ -174,9 +172,6 @@ uint64_t Baroda::readBarodaResolvedIp(char *fileName)
 
 			ip = line.substr(0, index);
 			url = line.substr(index+1);
-
-			if(url.size() > 20)
-				url.erase(0, (url.size() - 20));
 
 			util->ipToLong((char *)ip.c_str() , &ipAdd);
 			updateBarodaResolvedIp(ipAdd , url);

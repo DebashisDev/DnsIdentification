@@ -146,9 +146,7 @@ bool Patna::checkUrl(std::map<uint16_t, std::string> &appMap, string url, uint16
 {
 	for (auto it = appMap.cbegin(), next_it = it; it != appMap.cend(); it = next_it)
 	{
-		patnaIndex = url.find(it->second);
-
-		if(patnaIndex > 0)
+		if(strstr(url.c_str(), it->second.c_str()))
 		{
 			outFile << url <<"," << util->appId[appID] <<endl ;
 			return true;

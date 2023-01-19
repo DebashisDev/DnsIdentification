@@ -147,9 +147,7 @@ bool Rajkot::checkUrl(std::map<uint16_t, std::string> &appMap, string url, uint1
 {
 	for (auto it = appMap.cbegin(), next_it = it; it != appMap.cend(); it = next_it)
 	{
-		rajkotIndex = url.find(it->second);
-
-		if(rajkotIndex > 0)
+		if(strstr(url.c_str(), it->second.c_str()))
 		{
 			outFile << url <<"," << util->appId[appID] <<endl ;
 			return true;
