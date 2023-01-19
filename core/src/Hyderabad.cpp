@@ -150,7 +150,7 @@ bool Hyderabad::checkUrl(std::map<uint16_t, std::string> &appMap, string url, ui
 	{
 		if(strstr(url.c_str(), it->second.c_str()))
 		{
-			outFile << url <<"," << util->appId[appID] <<endl ;
+			outFile << url <<"| " << util->appId[appID] <<endl ;
 			return true;
 		}
 		 ++next_it;
