@@ -49,65 +49,11 @@ void Rajkot::startRajkotFun()
 		printf(" Size of Rajkot DNS Resolved Ip Map Index %02d = %02d....time: %s\n", mapIndex, rajkotResolvedIpMap[mapIndex].size(),util->timerfunc());
 
 		/* Data Mapping */
-		dnsMapRajkotData(1, rajkotResolvedIpMap[mapIndex]);
-		dnsMapRajkotData(2, rajkotResolvedIpMap[mapIndex]);
-		dnsMapRajkotData(3, rajkotResolvedIpMap[mapIndex]);
-		dnsMapRajkotData(4, rajkotResolvedIpMap[mapIndex]);
-		dnsMapRajkotData(5, rajkotResolvedIpMap[mapIndex]);
-		dnsMapRajkotData(6, rajkotResolvedIpMap[mapIndex]);
-		dnsMapRajkotData(7, rajkotResolvedIpMap[mapIndex]);
-		dnsMapRajkotData(8, rajkotResolvedIpMap[mapIndex]);
-		dnsMapRajkotData(9, rajkotResolvedIpMap[mapIndex]);
-		dnsMapRajkotData(10, rajkotResolvedIpMap[mapIndex]);
-		dnsMapRajkotData(11, rajkotResolvedIpMap[mapIndex]);
-		dnsMapRajkotData(12, rajkotResolvedIpMap[mapIndex]);
-		dnsMapRajkotData(13, rajkotResolvedIpMap[mapIndex]);
-		dnsMapRajkotData(14, rajkotResolvedIpMap[mapIndex]);
-		dnsMapRajkotData(15, rajkotResolvedIpMap[mapIndex]);
-		dnsMapRajkotData(16, rajkotResolvedIpMap[mapIndex]);
-		dnsMapRajkotData(17, rajkotResolvedIpMap[mapIndex]);
-		dnsMapRajkotData(18, rajkotResolvedIpMap[mapIndex]);
-		dnsMapRajkotData(19, rajkotResolvedIpMap[mapIndex]);
-		dnsMapRajkotData(20, rajkotResolvedIpMap[mapIndex]);
-		dnsMapRajkotData(21, rajkotResolvedIpMap[mapIndex]);
-		dnsMapRajkotData(22, rajkotResolvedIpMap[mapIndex]);
-		dnsMapRajkotData(23, rajkotResolvedIpMap[mapIndex]);
-		dnsMapRajkotData(24, rajkotResolvedIpMap[mapIndex]);
-		dnsMapRajkotData(25, rajkotResolvedIpMap[mapIndex]);
-		dnsMapRajkotData(26, rajkotResolvedIpMap[mapIndex]);
-		dnsMapRajkotData(27, rajkotResolvedIpMap[mapIndex]);
-		dnsMapRajkotData(28, rajkotResolvedIpMap[mapIndex]);
-		dnsMapRajkotData(29, rajkotResolvedIpMap[mapIndex]);
-		dnsMapRajkotData(30, rajkotResolvedIpMap[mapIndex]);
-		dnsMapRajkotData(31, rajkotResolvedIpMap[mapIndex]);
-		dnsMapRajkotData(32, rajkotResolvedIpMap[mapIndex]);
-		dnsMapRajkotData(33, rajkotResolvedIpMap[mapIndex]);
-		dnsMapRajkotData(34, rajkotResolvedIpMap[mapIndex]);
-		dnsMapRajkotData(35, rajkotResolvedIpMap[mapIndex]);
-		dnsMapRajkotData(36, rajkotResolvedIpMap[mapIndex]);
-		dnsMapRajkotData(37, rajkotResolvedIpMap[mapIndex]);
-		dnsMapRajkotData(38, rajkotResolvedIpMap[mapIndex]);
-		dnsMapRajkotData(39, rajkotResolvedIpMap[mapIndex]);
-		dnsMapRajkotData(40, rajkotResolvedIpMap[mapIndex]);
-		dnsMapRajkotData(41, rajkotResolvedIpMap[mapIndex]);
-		dnsMapRajkotData(42, rajkotResolvedIpMap[mapIndex]);
-		dnsMapRajkotData(43, rajkotResolvedIpMap[mapIndex]);
-		dnsMapRajkotData(44, rajkotResolvedIpMap[mapIndex]);
-		dnsMapRajkotData(45, rajkotResolvedIpMap[mapIndex]);
-		dnsMapRajkotData(46, rajkotResolvedIpMap[mapIndex]);
-		dnsMapRajkotData(47, rajkotResolvedIpMap[mapIndex]);
-		dnsMapRajkotData(48, rajkotResolvedIpMap[mapIndex]);
-		dnsMapRajkotData(49, rajkotResolvedIpMap[mapIndex]);
-		dnsMapRajkotData(50, rajkotResolvedIpMap[mapIndex]);
-		dnsMapRajkotData(51, rajkotResolvedIpMap[mapIndex]);
-		dnsMapRajkotData(52, rajkotResolvedIpMap[mapIndex]);
-		dnsMapRajkotData(53, rajkotResolvedIpMap[mapIndex]);
-		dnsMapRajkotData(54, rajkotResolvedIpMap[mapIndex]);
-		dnsMapRajkotData(55, rajkotResolvedIpMap[mapIndex]);
-		dnsMapRajkotData(56, rajkotResolvedIpMap[mapIndex]);
-		dnsMapRajkotData(57, rajkotResolvedIpMap[mapIndex]);
-
-			printf(" Remaining Size of Rajkot DNS Resolved Ip Map Index %02d = %02d....\n", mapIndex, rajkotResolvedIpMap[mapIndex].size());
+		for(uint16_t appId = 1; appId <= 57; appId++)
+		{
+			dnsMapRajkotData(appId, rajkotResolvedIpMap[mapIndex]);
+		}
+		printf(" Remaining Size of Rajkot DNS Resolved Ip Map Index %02d = %02d....\n", mapIndex, rajkotResolvedIpMap[mapIndex].size());
 	}
 
 #endif

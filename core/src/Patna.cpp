@@ -48,65 +48,11 @@ void Patna::startPatnaFun()
 	{
 		printf(" Size of Patna DNS Resolved Ip Map Index %02d = %02d....time: %s\n", mapIndex, patnaResolvedIpMap[mapIndex].size(),util->timerfunc());
 
-			/* Data Mapping */
-		dnsMapPatnaData(1, patnaResolvedIpMap[mapIndex]);
-		dnsMapPatnaData(2, patnaResolvedIpMap[mapIndex]);
-		dnsMapPatnaData(3, patnaResolvedIpMap[mapIndex]);
-		dnsMapPatnaData(4, patnaResolvedIpMap[mapIndex]);
-		dnsMapPatnaData(5, patnaResolvedIpMap[mapIndex]);
-		dnsMapPatnaData(6, patnaResolvedIpMap[mapIndex]);
-		dnsMapPatnaData(7, patnaResolvedIpMap[mapIndex]);
-		dnsMapPatnaData(8, patnaResolvedIpMap[mapIndex]);
-		dnsMapPatnaData(9, patnaResolvedIpMap[mapIndex]);
-		dnsMapPatnaData(10, patnaResolvedIpMap[mapIndex]);
-		dnsMapPatnaData(11, patnaResolvedIpMap[mapIndex]);
-		dnsMapPatnaData(12, patnaResolvedIpMap[mapIndex]);
-		dnsMapPatnaData(13, patnaResolvedIpMap[mapIndex]);
-		dnsMapPatnaData(14, patnaResolvedIpMap[mapIndex]);
-		dnsMapPatnaData(15, patnaResolvedIpMap[mapIndex]);
-		dnsMapPatnaData(16, patnaResolvedIpMap[mapIndex]);
-		dnsMapPatnaData(17, patnaResolvedIpMap[mapIndex]);
-		dnsMapPatnaData(18, patnaResolvedIpMap[mapIndex]);
-		dnsMapPatnaData(19, patnaResolvedIpMap[mapIndex]);
-		dnsMapPatnaData(20, patnaResolvedIpMap[mapIndex]);
-		dnsMapPatnaData(21, patnaResolvedIpMap[mapIndex]);
-		dnsMapPatnaData(22, patnaResolvedIpMap[mapIndex]);
-		dnsMapPatnaData(23, patnaResolvedIpMap[mapIndex]);
-		dnsMapPatnaData(24, patnaResolvedIpMap[mapIndex]);
-		dnsMapPatnaData(25, patnaResolvedIpMap[mapIndex]);
-		dnsMapPatnaData(26, patnaResolvedIpMap[mapIndex]);
-		dnsMapPatnaData(27, patnaResolvedIpMap[mapIndex]);
-		dnsMapPatnaData(28, patnaResolvedIpMap[mapIndex]);
-		dnsMapPatnaData(29, patnaResolvedIpMap[mapIndex]);
-		dnsMapPatnaData(30, patnaResolvedIpMap[mapIndex]);
-		dnsMapPatnaData(31, patnaResolvedIpMap[mapIndex]);
-		dnsMapPatnaData(32, patnaResolvedIpMap[mapIndex]);
-		dnsMapPatnaData(33, patnaResolvedIpMap[mapIndex]);
-		dnsMapPatnaData(34, patnaResolvedIpMap[mapIndex]);
-		dnsMapPatnaData(35, patnaResolvedIpMap[mapIndex]);
-		dnsMapPatnaData(36, patnaResolvedIpMap[mapIndex]);
-		dnsMapPatnaData(37, patnaResolvedIpMap[mapIndex]);
-		dnsMapPatnaData(38, patnaResolvedIpMap[mapIndex]);
-		dnsMapPatnaData(39, patnaResolvedIpMap[mapIndex]);
-		dnsMapPatnaData(40, patnaResolvedIpMap[mapIndex]);
-		dnsMapPatnaData(41, patnaResolvedIpMap[mapIndex]);
-		dnsMapPatnaData(42, patnaResolvedIpMap[mapIndex]);
-		dnsMapPatnaData(43, patnaResolvedIpMap[mapIndex]);
-		dnsMapPatnaData(44, patnaResolvedIpMap[mapIndex]);
-		dnsMapPatnaData(45, patnaResolvedIpMap[mapIndex]);
-		dnsMapPatnaData(46, patnaResolvedIpMap[mapIndex]);
-		dnsMapPatnaData(47, patnaResolvedIpMap[mapIndex]);
-		dnsMapPatnaData(48, patnaResolvedIpMap[mapIndex]);
-		dnsMapPatnaData(49, patnaResolvedIpMap[mapIndex]);
-		dnsMapPatnaData(50, patnaResolvedIpMap[mapIndex]);
-		dnsMapPatnaData(51, patnaResolvedIpMap[mapIndex]);
-		dnsMapPatnaData(52, patnaResolvedIpMap[mapIndex]);
-		dnsMapPatnaData(53, patnaResolvedIpMap[mapIndex]);
-		dnsMapPatnaData(54, patnaResolvedIpMap[mapIndex]);
-		dnsMapPatnaData(55, patnaResolvedIpMap[mapIndex]);
-		dnsMapPatnaData(56, patnaResolvedIpMap[mapIndex]);
-		dnsMapPatnaData(57, patnaResolvedIpMap[mapIndex]);
-
+		/* Data Mapping */
+		for(uint16_t appId = 1; appId <= 57; appId++)
+		{
+			dnsMapPatnaData(appId, patnaResolvedIpMap[mapIndex]);
+		}
 		printf(" Remaining Size of Patna DNS Resolved Ip Map Index %02d = %02d....\n", mapIndex, patnaResolvedIpMap[mapIndex].size());
 	}
 

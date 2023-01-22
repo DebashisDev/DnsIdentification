@@ -49,65 +49,11 @@ void Surat::startSuratFun()
 		printf(" Size of Surat DNS Resolved Ip Map Index %02d = %02d....time: %s\n", mapIndex, suratResolvedIpMap[mapIndex].size(),util->timerfunc());
 
 		/* Data Mapping */
-		dnsMapSuratData(1, suratResolvedIpMap[mapIndex]);
-		dnsMapSuratData(2, suratResolvedIpMap[mapIndex]);
-		dnsMapSuratData(3, suratResolvedIpMap[mapIndex]);
-		dnsMapSuratData(4, suratResolvedIpMap[mapIndex]);
-		dnsMapSuratData(5, suratResolvedIpMap[mapIndex]);
-		dnsMapSuratData(6, suratResolvedIpMap[mapIndex]);
-		dnsMapSuratData(7, suratResolvedIpMap[mapIndex]);
-		dnsMapSuratData(8, suratResolvedIpMap[mapIndex]);
-		dnsMapSuratData(9, suratResolvedIpMap[mapIndex]);
-		dnsMapSuratData(10, suratResolvedIpMap[mapIndex]);
-		dnsMapSuratData(11, suratResolvedIpMap[mapIndex]);
-		dnsMapSuratData(12, suratResolvedIpMap[mapIndex]);
-		dnsMapSuratData(13, suratResolvedIpMap[mapIndex]);
-		dnsMapSuratData(14, suratResolvedIpMap[mapIndex]);
-		dnsMapSuratData(15, suratResolvedIpMap[mapIndex]);
-		dnsMapSuratData(16, suratResolvedIpMap[mapIndex]);
-		dnsMapSuratData(17, suratResolvedIpMap[mapIndex]);
-		dnsMapSuratData(18, suratResolvedIpMap[mapIndex]);
-		dnsMapSuratData(19, suratResolvedIpMap[mapIndex]);
-		dnsMapSuratData(20, suratResolvedIpMap[mapIndex]);
-		dnsMapSuratData(21, suratResolvedIpMap[mapIndex]);
-		dnsMapSuratData(22, suratResolvedIpMap[mapIndex]);
-		dnsMapSuratData(23, suratResolvedIpMap[mapIndex]);
-		dnsMapSuratData(24, suratResolvedIpMap[mapIndex]);
-		dnsMapSuratData(25, suratResolvedIpMap[mapIndex]);
-		dnsMapSuratData(26, suratResolvedIpMap[mapIndex]);
-		dnsMapSuratData(27, suratResolvedIpMap[mapIndex]);
-		dnsMapSuratData(28, suratResolvedIpMap[mapIndex]);
-		dnsMapSuratData(29, suratResolvedIpMap[mapIndex]);
-		dnsMapSuratData(30, suratResolvedIpMap[mapIndex]);
-		dnsMapSuratData(31, suratResolvedIpMap[mapIndex]);
-		dnsMapSuratData(32, suratResolvedIpMap[mapIndex]);
-		dnsMapSuratData(33, suratResolvedIpMap[mapIndex]);
-		dnsMapSuratData(34, suratResolvedIpMap[mapIndex]);
-		dnsMapSuratData(35, suratResolvedIpMap[mapIndex]);
-		dnsMapSuratData(36, suratResolvedIpMap[mapIndex]);
-		dnsMapSuratData(37, suratResolvedIpMap[mapIndex]);
-		dnsMapSuratData(38, suratResolvedIpMap[mapIndex]);
-		dnsMapSuratData(39, suratResolvedIpMap[mapIndex]);
-		dnsMapSuratData(40, suratResolvedIpMap[mapIndex]);
-		dnsMapSuratData(41, suratResolvedIpMap[mapIndex]);
-		dnsMapSuratData(42, suratResolvedIpMap[mapIndex]);
-		dnsMapSuratData(43, suratResolvedIpMap[mapIndex]);
-		dnsMapSuratData(44, suratResolvedIpMap[mapIndex]);
-		dnsMapSuratData(45, suratResolvedIpMap[mapIndex]);
-		dnsMapSuratData(46, suratResolvedIpMap[mapIndex]);
-		dnsMapSuratData(47, suratResolvedIpMap[mapIndex]);
-		dnsMapSuratData(48, suratResolvedIpMap[mapIndex]);
-		dnsMapSuratData(49, suratResolvedIpMap[mapIndex]);
-		dnsMapSuratData(50, suratResolvedIpMap[mapIndex]);
-		dnsMapSuratData(51, suratResolvedIpMap[mapIndex]);
-		dnsMapSuratData(52, suratResolvedIpMap[mapIndex]);
-		dnsMapSuratData(53, suratResolvedIpMap[mapIndex]);
-		dnsMapSuratData(54, suratResolvedIpMap[mapIndex]);
-		dnsMapSuratData(55, suratResolvedIpMap[mapIndex]);
-		dnsMapSuratData(56, suratResolvedIpMap[mapIndex]);
-		dnsMapSuratData(57, suratResolvedIpMap[mapIndex]);
-
-			printf(" Remaining Size of Surat DNS Resolved Ip Map Index %02d = %02d....\n", mapIndex, suratResolvedIpMap[mapIndex].size());
+		for(uint16_t appId = 1; appId <= 57; appId++)
+		{
+			dnsMapSuratData(appId, suratResolvedIpMap[mapIndex]);
+		}
+		printf(" Remaining Size of Surat DNS Resolved Ip Map Index %02d = %02d....\n", mapIndex, suratResolvedIpMap[mapIndex].size());
 	}
 
 #endif

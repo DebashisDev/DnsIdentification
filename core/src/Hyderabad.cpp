@@ -49,64 +49,10 @@ void Hyderabad::startHyderabadFun()
 		printf(" Size of Hyderabad DNS Resolved Ip Map Index %02d = %02d....time: %s\n", mapIndex, hyderabadResolvedIpMap[mapIndex].size(),util->timerfunc());
 
 		/* Data Mapping */
-		dnsMapHyderabadData(1, hyderabadResolvedIpMap[mapIndex]);
-		dnsMapHyderabadData(2, hyderabadResolvedIpMap[mapIndex]);
-		dnsMapHyderabadData(3, hyderabadResolvedIpMap[mapIndex]);
-		dnsMapHyderabadData(4, hyderabadResolvedIpMap[mapIndex]);
-		dnsMapHyderabadData(5, hyderabadResolvedIpMap[mapIndex]);
-		dnsMapHyderabadData(6, hyderabadResolvedIpMap[mapIndex]);
-		dnsMapHyderabadData(7, hyderabadResolvedIpMap[mapIndex]);
-		dnsMapHyderabadData(8, hyderabadResolvedIpMap[mapIndex]);
-		dnsMapHyderabadData(9, hyderabadResolvedIpMap[mapIndex]);
-		dnsMapHyderabadData(10, hyderabadResolvedIpMap[mapIndex]);
-		dnsMapHyderabadData(11, hyderabadResolvedIpMap[mapIndex]);
-		dnsMapHyderabadData(12, hyderabadResolvedIpMap[mapIndex]);
-		dnsMapHyderabadData(13, hyderabadResolvedIpMap[mapIndex]);
-		dnsMapHyderabadData(14, hyderabadResolvedIpMap[mapIndex]);
-		dnsMapHyderabadData(15, hyderabadResolvedIpMap[mapIndex]);
-		dnsMapHyderabadData(16, hyderabadResolvedIpMap[mapIndex]);
-		dnsMapHyderabadData(17, hyderabadResolvedIpMap[mapIndex]);
-		dnsMapHyderabadData(18, hyderabadResolvedIpMap[mapIndex]);
-		dnsMapHyderabadData(19, hyderabadResolvedIpMap[mapIndex]);
-		dnsMapHyderabadData(20, hyderabadResolvedIpMap[mapIndex]);
-		dnsMapHyderabadData(21, hyderabadResolvedIpMap[mapIndex]);
-		dnsMapHyderabadData(22, hyderabadResolvedIpMap[mapIndex]);
-		dnsMapHyderabadData(23, hyderabadResolvedIpMap[mapIndex]);
-		dnsMapHyderabadData(24, hyderabadResolvedIpMap[mapIndex]);
-		dnsMapHyderabadData(25, hyderabadResolvedIpMap[mapIndex]);
-		dnsMapHyderabadData(26, hyderabadResolvedIpMap[mapIndex]);
-		dnsMapHyderabadData(27, hyderabadResolvedIpMap[mapIndex]);
-		dnsMapHyderabadData(28, hyderabadResolvedIpMap[mapIndex]);
-		dnsMapHyderabadData(29, hyderabadResolvedIpMap[mapIndex]);
-		dnsMapHyderabadData(30, hyderabadResolvedIpMap[mapIndex]);
-		dnsMapHyderabadData(31, hyderabadResolvedIpMap[mapIndex]);
-		dnsMapHyderabadData(32, hyderabadResolvedIpMap[mapIndex]);
-		dnsMapHyderabadData(33, hyderabadResolvedIpMap[mapIndex]);
-		dnsMapHyderabadData(34, hyderabadResolvedIpMap[mapIndex]);
-		dnsMapHyderabadData(35, hyderabadResolvedIpMap[mapIndex]);
-		dnsMapHyderabadData(36, hyderabadResolvedIpMap[mapIndex]);
-		dnsMapHyderabadData(37, hyderabadResolvedIpMap[mapIndex]);
-		dnsMapHyderabadData(38, hyderabadResolvedIpMap[mapIndex]);
-		dnsMapHyderabadData(39, hyderabadResolvedIpMap[mapIndex]);
-		dnsMapHyderabadData(40, hyderabadResolvedIpMap[mapIndex]);
-		dnsMapHyderabadData(41, hyderabadResolvedIpMap[mapIndex]);
-		dnsMapHyderabadData(42, hyderabadResolvedIpMap[mapIndex]);
-		dnsMapHyderabadData(43, hyderabadResolvedIpMap[mapIndex]);
-		dnsMapHyderabadData(44, hyderabadResolvedIpMap[mapIndex]);
-		dnsMapHyderabadData(45, hyderabadResolvedIpMap[mapIndex]);
-		dnsMapHyderabadData(46, hyderabadResolvedIpMap[mapIndex]);
-		dnsMapHyderabadData(47, hyderabadResolvedIpMap[mapIndex]);
-		dnsMapHyderabadData(48, hyderabadResolvedIpMap[mapIndex]);
-		dnsMapHyderabadData(49, hyderabadResolvedIpMap[mapIndex]);
-		dnsMapHyderabadData(50, hyderabadResolvedIpMap[mapIndex]);
-		dnsMapHyderabadData(51, hyderabadResolvedIpMap[mapIndex]);
-		dnsMapHyderabadData(52, hyderabadResolvedIpMap[mapIndex]);
-		dnsMapHyderabadData(53, hyderabadResolvedIpMap[mapIndex]);
-		dnsMapHyderabadData(54, hyderabadResolvedIpMap[mapIndex]);
-		dnsMapHyderabadData(55, hyderabadResolvedIpMap[mapIndex]);
-		dnsMapHyderabadData(56, hyderabadResolvedIpMap[mapIndex]);
-		dnsMapHyderabadData(57, hyderabadResolvedIpMap[mapIndex]);
-
+		for(uint16_t appId = 1; appId <= 57; appId++)
+		{
+			dnsMapHyderabadData(appId, hyderabadResolvedIpMap[mapIndex]);
+		}
 		printf(" Remaining Size of Hyderabad DNS Resolved Ip Map Index %02d = %02d....\n", mapIndex, hyderabadResolvedIpMap[mapIndex].size());
 	}
 #endif
