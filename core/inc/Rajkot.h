@@ -28,7 +28,7 @@ class Rajkot
 		uint64_t		recordCount;
 
 		pthread_t 		rajkotThr;
-		char 			completePath[50];
+		char 			completePath[100];
 		ifstream 		inFile;
 		ofstream        outFile;
 
@@ -37,9 +37,9 @@ class Rajkot
 
 		void			startRajkotFun();
 		uint64_t		readRajkotResolvedIp(char *fileName);
-		void			dnsMapRajkotData(std::map<uint16_t, std::string> &appMap, uint16_t appId, std::map<uint32_t, std::string> &barodaMap);
+		void			dnsMapRajkotData(uint16_t appId, std::map<uint32_t, std::string> &barodaMap);
 		void			updateRajkotResolvedIp(uint32_t ipr, string URL);
-		bool			checkUrl(std::map<uint16_t, std::string> &appMap, string url, uint16_t appID);
+		bool			checkUrl(string url, uint16_t appID);
 
 		std::map<uint32_t, std::string> rajkotResolvedIpMap[10];
 };

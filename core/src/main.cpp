@@ -61,35 +61,43 @@ int main()
 	util->closeDnsKeyFile();
 	util->populateAppId();
 
-	/* Baroda thread*/
+	/* Hyderabad Thread */
+	Hyderabad *hyd = new Hyderabad();
+
+	pthread_create(&hyd->hyderabadThr, NULL, startHyderabad, (void *)hyd);
+	pinThread(hyd->hyderabadThr, util->Hyd_Cpu_Core);
+
+	sleep(10);
+
+	/* Baroda thread */
 	Baroda *baroda = new Baroda();
 
 	pthread_create(&baroda->barodaThr, NULL, startBaroda, (void *)baroda);
 	pinThread(baroda->barodaThr,util->Baroda_Cpu_Core);
 
-	/*Rajkot Thread*/
+	sleep(10);
+
+	/* Rajkot Thread */
 	Rajkot *rajkot = new Rajkot();
 
 	pthread_create(&rajkot->rajkotThr, NULL, startRajkot, (void *)rajkot);
 	pinThread(rajkot->rajkotThr, util->Rajkot_Cpu_Core);
 
-	/*Surat Thread*/
+	sleep(10);
+
+	/*Surat Thread */
 	Surat *surat = new Surat();
 
 	pthread_create(&surat->suratThr, NULL, startSurat, (void *)surat);
 	pinThread(surat->suratThr,util->Surat_Cpu_Core);
 
-	/*Patna Thread*/
+	sleep(10);
+
+	/* Patna Thread */
 	Patna *patna = new Patna();
 
 	pthread_create(&patna->patnaThr, NULL, startPatna, (void *)patna);
 	pinThread(patna->patnaThr, util->Patna_Cpu_Core);
-
-	/*Hyderabad Thread*/
-	Hyderabad *hyd = new Hyderabad();
-
-	pthread_create(&hyd->hyderabadThr, NULL, startHyderabad, (void *)hyd);
-	pinThread(hyd->hyderabadThr, util->Hyd_Cpu_Core);
 
 	while(true)
 	{
@@ -99,7 +107,7 @@ int main()
 		printf("BarodaFlag =  %d : RajkotFlag = %d : SuratFlag = %d : PatnaFlag = %d : HyderabadFlag = %d \n ",
 				baroda->barodaFlag,rajkot->rajkotFlag,surat->suratFlag,patna->patnaFlag,hyd->hyderabadFlag);
 
-		if(baroda->barodaFlag && rajkot->rajkotFlag && surat->suratFlag && patna->patnaFlag /*&& hyd->hyderabadFlag*/)
+		if(baroda->barodaFlag && rajkot->rajkotFlag && surat->suratFlag && patna->patnaFlag && hyd->hyderabadFlag)
 		{
 			/*Baroda Data Dump*/
 

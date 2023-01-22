@@ -41,111 +41,110 @@ void Rajkot::startRajkotFun()
 	sprintf(completePath,"%s/%s", util->getRajkotPath().c_str(), util->getFileName().c_str());
 	uint64_t count = readRajkotResolvedIp(completePath);
 
-	printf("Completed Dumping Rajkot DNS Resolved Ips with count : %llu ..time: %s\n", count, util->timerfunc());
+	printf(" Completed Dumping Rajkot DNS Resolved Ips with count : %llu ..time: %s\n", count, util->timerfunc());
 	recordCount = 0;
 
 	for(uint16_t mapIndex = 0; mapIndex <= 9; mapIndex++)
 	{
-		printf("Size of rajkotResolvedIpMap Index %02d = %02d....time: %s\n", mapIndex, rajkotResolvedIpMap[mapIndex].size(),util->timerfunc());
+		printf(" Size of Rajkot DNS Resolved Ip Map Index %02d = %02d....time: %s\n", mapIndex, rajkotResolvedIpMap[mapIndex].size(),util->timerfunc());
 
-			/* Data Mapping */
-			dnsMapRajkotData(util->YahooMail, 1,rajkotResolvedIpMap[mapIndex]);
-			dnsMapRajkotData(util->Music, 2,rajkotResolvedIpMap[mapIndex]);
-			dnsMapRajkotData(util->CloudProvider, 3,rajkotResolvedIpMap[mapIndex]);
-			dnsMapRajkotData(util->Stock, 4,rajkotResolvedIpMap[mapIndex]);
-			dnsMapRajkotData(util->Yahoo, 5,rajkotResolvedIpMap[mapIndex]);
-			dnsMapRajkotData(util->MSN, 6,rajkotResolvedIpMap[mapIndex]);
-			dnsMapRajkotData(util->Apple, 7,rajkotResolvedIpMap[mapIndex]);
-			dnsMapRajkotData(util->Skype, 8,rajkotResolvedIpMap[mapIndex]);
-			dnsMapRajkotData(util->Facebook, 9,rajkotResolvedIpMap[mapIndex]);
-			dnsMapRajkotData(util->Whatsapp, 10,rajkotResolvedIpMap[mapIndex]);
-			dnsMapRajkotData(util->Google, 11,rajkotResolvedIpMap[mapIndex]);
-			dnsMapRajkotData(util->Youtube, 12,rajkotResolvedIpMap[mapIndex]);
-			dnsMapRajkotData(util->Games, 13,rajkotResolvedIpMap[mapIndex]);
-			dnsMapRajkotData(util->NetFlix, 14,rajkotResolvedIpMap[mapIndex]);
-			dnsMapRajkotData(util->Gmail, 15,rajkotResolvedIpMap[mapIndex]);
-			dnsMapRajkotData(util->Hotmail, 16,rajkotResolvedIpMap[mapIndex]);
-			dnsMapRajkotData(util->Microsoft, 17,rajkotResolvedIpMap[mapIndex]);
-			dnsMapRajkotData(util->Office365, 18,rajkotResolvedIpMap[mapIndex]);
-			dnsMapRajkotData(util->LinkedIn, 19,rajkotResolvedIpMap[mapIndex]);
-			dnsMapRajkotData(util->Webex, 20,rajkotResolvedIpMap[mapIndex]);
-			dnsMapRajkotData(util->Viber, 21,rajkotResolvedIpMap[mapIndex]);
-			dnsMapRajkotData(util->SocialNetwork, 22,rajkotResolvedIpMap[mapIndex]);
-			dnsMapRajkotData(util->ECommerce, 23,rajkotResolvedIpMap[mapIndex]);
-			dnsMapRajkotData(util->Travel, 24,rajkotResolvedIpMap[mapIndex]);
-			dnsMapRajkotData(util->FoodOrdering, 25,rajkotResolvedIpMap[mapIndex]);
-			dnsMapRajkotData(util->Twitter, 26,rajkotResolvedIpMap[mapIndex]);
-			dnsMapRajkotData(util->FileSharing, 27,rajkotResolvedIpMap[mapIndex]);
-			dnsMapRajkotData(util->Internet, 28,rajkotResolvedIpMap[mapIndex]);
-			dnsMapRajkotData(util->News, 29,rajkotResolvedIpMap[mapIndex]);
-			dnsMapRajkotData(util->Dropbox, 30,rajkotResolvedIpMap[mapIndex]);
-			dnsMapRajkotData(util->Browser, 31,rajkotResolvedIpMap[mapIndex]);
-			dnsMapRajkotData(util->Sports, 32,rajkotResolvedIpMap[mapIndex]);
-			dnsMapRajkotData(util->Bank, 33,rajkotResolvedIpMap[mapIndex]);
-			dnsMapRajkotData(util->Akamai, 34,rajkotResolvedIpMap[mapIndex]);
-			dnsMapRajkotData(util->GoDaddy, 35,rajkotResolvedIpMap[mapIndex]);
-			dnsMapRajkotData(util->Video, 36,rajkotResolvedIpMap[mapIndex]);
-			dnsMapRajkotData(util->Truecaller, 37,rajkotResolvedIpMap[mapIndex]);
-			dnsMapRajkotData(util->ISP, 38,rajkotResolvedIpMap[mapIndex]);
-			dnsMapRajkotData(util->SpeedTest, 39,rajkotResolvedIpMap[mapIndex]);
-			dnsMapRajkotData(util->AmazonPrime, 40,rajkotResolvedIpMap[mapIndex]);
-			dnsMapRajkotData(util->ALTBalaji, 41,rajkotResolvedIpMap[mapIndex]);
-			dnsMapRajkotData(util->BigFlix, 42,rajkotResolvedIpMap[mapIndex]);
-			dnsMapRajkotData(util->ErosNow, 43,rajkotResolvedIpMap[mapIndex]);
-			dnsMapRajkotData(util->Hotstar, 44,rajkotResolvedIpMap[mapIndex]);
-			dnsMapRajkotData(util->SonyLiv, 45,rajkotResolvedIpMap[mapIndex]);
-			dnsMapRajkotData(util->Voot, 46,rajkotResolvedIpMap[mapIndex]);
-			dnsMapRajkotData(util->YouNow, 47,rajkotResolvedIpMap[mapIndex]);
-			dnsMapRajkotData(util->Zee5, 48,rajkotResolvedIpMap[mapIndex]);
-			dnsMapRajkotData(util->Jio, 49,rajkotResolvedIpMap[mapIndex]);
-			dnsMapRajkotData(util->Instagram, 50,rajkotResolvedIpMap[mapIndex]);
-			dnsMapRajkotData(util->TIKTOK, 51,rajkotResolvedIpMap[mapIndex]);
-			dnsMapRajkotData(util->PUBG, 52,rajkotResolvedIpMap[mapIndex]);
-			dnsMapRajkotData(util->Uploadhaven, 53,rajkotResolvedIpMap[mapIndex]);
-			dnsMapRajkotData(util->DisneyPlus, 54,rajkotResolvedIpMap[mapIndex]);
-			dnsMapRajkotData(util->Zoom, 55,rajkotResolvedIpMap[mapIndex]);
-			dnsMapRajkotData(util->Adult, 56,rajkotResolvedIpMap[mapIndex]);
-			dnsMapRajkotData(util->Amazon, 57,rajkotResolvedIpMap[mapIndex]);
+		/* Data Mapping */
+		dnsMapRajkotData(1, rajkotResolvedIpMap[mapIndex]);
+		dnsMapRajkotData(2, rajkotResolvedIpMap[mapIndex]);
+		dnsMapRajkotData(3, rajkotResolvedIpMap[mapIndex]);
+		dnsMapRajkotData(4, rajkotResolvedIpMap[mapIndex]);
+		dnsMapRajkotData(5, rajkotResolvedIpMap[mapIndex]);
+		dnsMapRajkotData(6, rajkotResolvedIpMap[mapIndex]);
+		dnsMapRajkotData(7, rajkotResolvedIpMap[mapIndex]);
+		dnsMapRajkotData(8, rajkotResolvedIpMap[mapIndex]);
+		dnsMapRajkotData(9, rajkotResolvedIpMap[mapIndex]);
+		dnsMapRajkotData(10, rajkotResolvedIpMap[mapIndex]);
+		dnsMapRajkotData(11, rajkotResolvedIpMap[mapIndex]);
+		dnsMapRajkotData(12, rajkotResolvedIpMap[mapIndex]);
+		dnsMapRajkotData(13, rajkotResolvedIpMap[mapIndex]);
+		dnsMapRajkotData(14, rajkotResolvedIpMap[mapIndex]);
+		dnsMapRajkotData(15, rajkotResolvedIpMap[mapIndex]);
+		dnsMapRajkotData(16, rajkotResolvedIpMap[mapIndex]);
+		dnsMapRajkotData(17, rajkotResolvedIpMap[mapIndex]);
+		dnsMapRajkotData(18, rajkotResolvedIpMap[mapIndex]);
+		dnsMapRajkotData(19, rajkotResolvedIpMap[mapIndex]);
+		dnsMapRajkotData(20, rajkotResolvedIpMap[mapIndex]);
+		dnsMapRajkotData(21, rajkotResolvedIpMap[mapIndex]);
+		dnsMapRajkotData(22, rajkotResolvedIpMap[mapIndex]);
+		dnsMapRajkotData(23, rajkotResolvedIpMap[mapIndex]);
+		dnsMapRajkotData(24, rajkotResolvedIpMap[mapIndex]);
+		dnsMapRajkotData(25, rajkotResolvedIpMap[mapIndex]);
+		dnsMapRajkotData(26, rajkotResolvedIpMap[mapIndex]);
+		dnsMapRajkotData(27, rajkotResolvedIpMap[mapIndex]);
+		dnsMapRajkotData(28, rajkotResolvedIpMap[mapIndex]);
+		dnsMapRajkotData(29, rajkotResolvedIpMap[mapIndex]);
+		dnsMapRajkotData(30, rajkotResolvedIpMap[mapIndex]);
+		dnsMapRajkotData(31, rajkotResolvedIpMap[mapIndex]);
+		dnsMapRajkotData(32, rajkotResolvedIpMap[mapIndex]);
+		dnsMapRajkotData(33, rajkotResolvedIpMap[mapIndex]);
+		dnsMapRajkotData(34, rajkotResolvedIpMap[mapIndex]);
+		dnsMapRajkotData(35, rajkotResolvedIpMap[mapIndex]);
+		dnsMapRajkotData(36, rajkotResolvedIpMap[mapIndex]);
+		dnsMapRajkotData(37, rajkotResolvedIpMap[mapIndex]);
+		dnsMapRajkotData(38, rajkotResolvedIpMap[mapIndex]);
+		dnsMapRajkotData(39, rajkotResolvedIpMap[mapIndex]);
+		dnsMapRajkotData(40, rajkotResolvedIpMap[mapIndex]);
+		dnsMapRajkotData(41, rajkotResolvedIpMap[mapIndex]);
+		dnsMapRajkotData(42, rajkotResolvedIpMap[mapIndex]);
+		dnsMapRajkotData(43, rajkotResolvedIpMap[mapIndex]);
+		dnsMapRajkotData(44, rajkotResolvedIpMap[mapIndex]);
+		dnsMapRajkotData(45, rajkotResolvedIpMap[mapIndex]);
+		dnsMapRajkotData(46, rajkotResolvedIpMap[mapIndex]);
+		dnsMapRajkotData(47, rajkotResolvedIpMap[mapIndex]);
+		dnsMapRajkotData(48, rajkotResolvedIpMap[mapIndex]);
+		dnsMapRajkotData(49, rajkotResolvedIpMap[mapIndex]);
+		dnsMapRajkotData(50, rajkotResolvedIpMap[mapIndex]);
+		dnsMapRajkotData(51, rajkotResolvedIpMap[mapIndex]);
+		dnsMapRajkotData(52, rajkotResolvedIpMap[mapIndex]);
+		dnsMapRajkotData(53, rajkotResolvedIpMap[mapIndex]);
+		dnsMapRajkotData(54, rajkotResolvedIpMap[mapIndex]);
+		dnsMapRajkotData(55, rajkotResolvedIpMap[mapIndex]);
+		dnsMapRajkotData(56, rajkotResolvedIpMap[mapIndex]);
+		dnsMapRajkotData(57, rajkotResolvedIpMap[mapIndex]);
 
-			printf("Remaining Size of rajkotResolvedIpMap Index %02d = %02d....\n", mapIndex, rajkotResolvedIpMap[mapIndex].size());
+			printf(" Remaining Size of Rajkot DNS Resolved Ip Map Index %02d = %02d....\n", mapIndex, rajkotResolvedIpMap[mapIndex].size());
 	}
 
-	rajkotFlag= true;
 #endif
 
 	outFile.close();
+	rajkotFlag= true;
+	bool printFlag = false;
 
 	while(true)
 	{
 		sleep (5);
 
-		if(rajkotFlag)
+		if(rajkotFlag && !printFlag)
 		{
-			printf("Rajkot Child Completed the Process ..\n");
+			printf(" Rajkot Child Completed the Process ..\n");
+			printFlag = true;
 		}
 	}
 }
 
-void Rajkot::dnsMapRajkotData(std::map<uint16_t, std::string> &appMap, uint16_t appID, std::map<uint32_t, std::string> &rajkotMap)
+void Rajkot::dnsMapRajkotData(uint16_t appID, std::map<uint32_t, std::string> &rajkotMap)
 {
-
 	for (auto it =rajkotMap.cbegin(), next_it = it; it !=rajkotMap.cend(); it = next_it)
 	{
-		if(checkUrl(appMap, it->second, appID))
+		if(checkUrl(it->second, appID))
 		{
 			++next_it;
 			rajkotMap.erase(it);
 		}
 		else
-		{
-			 ++next_it;
-		}
+		{ ++next_it; }
 	}
 }
 
-bool Rajkot::checkUrl(std::map<uint16_t, std::string> &appMap, string url, uint16_t appID)
+bool Rajkot::checkUrl(string url, uint16_t appID)
 {
-	for (auto it = appMap.cbegin(), next_it = it; it != appMap.cend(); it = next_it)
+	for (auto it = util->keyWordMap[appID].cbegin(), next_it = it; it != util->keyWordMap[appID].cend(); it = next_it)
 	{
 		if(strstr(url.c_str(), it->second.c_str()))
 		{

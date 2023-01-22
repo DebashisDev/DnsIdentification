@@ -28,7 +28,7 @@ class Patna
 		uint64_t		recordCount;
 
 		pthread_t 		patnaThr;
-		char 			completePath[50];
+		char 			completePath[100];
 		ifstream 		inFile;
 		ofstream        outFile;
 
@@ -38,12 +38,11 @@ class Patna
 		void			startPatnaFun();
 		uint64_t		readPatnaResolvedIp(char *fileName);
 
-		void			dnsMapPatnaData(std::map<uint16_t, std::string> &appMap, uint16_t appId, std::map<uint32_t, std::string> &barodaMap);
+		void			dnsMapPatnaData(uint16_t appId, std::map<uint32_t, std::string> &barodaMap);
 		void			updatePatnaResolvedIp(uint32_t ipr, string URL);
-		bool			checkUrl(std::map<uint16_t, std::string> &appMap, string url, uint16_t appID);
+		bool			checkUrl(string url, uint16_t appID);
 
 		std::map<uint32_t, std::string> patnaResolvedIpMap[10];
-		std::map<std::string, uint16_t> dnsLookUpPatnaData[57];
 };
 
 #endif /* DNSIDENTIFICATION_CORE_SRC_PATNA_H_ */

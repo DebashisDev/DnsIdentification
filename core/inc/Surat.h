@@ -28,7 +28,7 @@ class Surat
 		uint64_t		recordCount;
 
 		pthread_t 		suratThr;
-		char 			completePath[50];
+		char 			completePath[100];
 		ifstream 		inFile;
 		ofstream        outFile;
 
@@ -37,13 +37,12 @@ class Surat
 
 		void			startSuratFun();
 		uint64_t		readSuratResolvedIp(char *fileName);
-		void			dnsMapSuratData(std::map<uint16_t, std::string> &appMap, uint16_t appId, std::map<uint32_t, std::string> &barodaMap);
+		void			dnsMapSuratData(uint16_t appId, std::map<uint32_t, std::string> &barodaMap);
 		void			updateSuratResolvedIp(uint32_t ipr, string URL);
-		bool			checkUrl(std::map<uint16_t, std::string> &appMap, string url, uint16_t appID);
+		bool			checkUrl(string url, uint16_t appID);
 
 
 		std::map<uint32_t, std::string> suratResolvedIpMap[10];
-		std::map<std::string, uint16_t> dnsLookUpSuratData[57];
 };
 
 #endif /* DNSIDENTIFICATION_CORE_SRC_SURAT_H_ */

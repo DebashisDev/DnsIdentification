@@ -242,24 +242,6 @@ void utilities::readKeyWord()
 			Hyd_Cpu_Core = stoi(Value);
 
 			printf("Baroda cpu core = %d\n", Hyd_Cpu_Core);
-
-		}
-
-
-		if(Key.compare("Music") == 0)
-		{
-			fp >> Value;
-			int cnt = 0;
-
-			char *pch = strtok((char *)Value.c_str(),",");
-
-			while (pch != NULL)
-			{
-				Music[cnt] = std::string(pch);
-				pch = strtok (NULL, ",");
-				cnt++;
-			}
-			printf("Music Key Word Cnt = %d\n", cnt);
 		}
 
 		if(Key.compare("YahooMail") == 0)
@@ -271,12 +253,29 @@ void utilities::readKeyWord()
 
 			while (pch != NULL)
 			{
-				YahooMail[cnt] = std::string(pch);
-					pch = strtok (NULL, ",");
-					cnt++;
+				keyWordMap[1][cnt] = std::string(pch);
+				pch = strtok (NULL, ",");
+				cnt++;
 			}
 			printf("YahooMail Key Word Cnt = %d\n", cnt);
 		}
+
+		if(Key.compare("Music") == 0)
+		{
+			fp >> Value;
+			int cnt = 0;
+
+			char *pch = strtok((char *)Value.c_str(),",");
+
+			while (pch != NULL)
+			{
+				keyWordMap[2][cnt] = std::string(pch);
+				pch = strtok (NULL, ",");
+				cnt++;
+			}
+			printf("Music Key Word Cnt = %d\n", cnt);
+		}
+
 
 		if(Key.compare("CloudProvider") == 0)
 		{
@@ -288,7 +287,7 @@ void utilities::readKeyWord()
 
 			while (pch != NULL)
 			{
-				CloudProvider[cnt] = std::string(pch);
+				keyWordMap[3][cnt] = std::string(pch);
 				pch = strtok (NULL, ",");
 				cnt++;
 			}
@@ -304,7 +303,7 @@ void utilities::readKeyWord()
 
 			while (pch != NULL)
 			{
-				Stock[cnt] = std::string(pch);
+				keyWordMap[4][cnt] = std::string(pch);
 				pch = strtok (NULL, ",");
 				cnt++;
 			}
@@ -320,7 +319,7 @@ void utilities::readKeyWord()
 
 			while (pch != NULL)
 			{
-				Yahoo[cnt] = std::string(pch);
+				keyWordMap[5][cnt] = std::string(pch);
 				pch = strtok (NULL, ",");
 				cnt++;
 			}
@@ -336,7 +335,7 @@ void utilities::readKeyWord()
 
 			while (pch != NULL)
 			{
-				MSN[cnt] = std::string(pch);
+				keyWordMap[6][cnt] = std::string(pch);
 				pch = strtok (NULL, ",");
 				cnt++;
 			}
@@ -352,7 +351,7 @@ void utilities::readKeyWord()
 
 			while (pch != NULL)
 			{
-				Apple[cnt] = std::string(pch);
+				keyWordMap[7][cnt] = std::string(pch);
 				pch = strtok (NULL, ",");
 				cnt++;
 			}
@@ -368,7 +367,7 @@ void utilities::readKeyWord()
 
 			while (pch != NULL)
 			{
-				Skype[cnt] = std::string(pch);
+				keyWordMap[8][cnt] = std::string(pch);
 				pch = strtok (NULL, ",");
 				cnt++;
 			}
@@ -384,7 +383,7 @@ void utilities::readKeyWord()
 
 			while (pch != NULL)
 			{
-				Facebook[cnt] = std::string(pch);
+				keyWordMap[9][cnt] = std::string(pch);
 				pch = strtok (NULL, ",");
 				cnt++;
 			}
@@ -400,7 +399,7 @@ void utilities::readKeyWord()
 
 			while (pch != NULL)
 			{
-				Whatsapp[cnt] = std::string(pch);
+				keyWordMap[10][cnt] = std::string(pch);
 				pch = strtok (NULL, ",");
 				cnt++;
 			}
@@ -416,7 +415,7 @@ void utilities::readKeyWord()
 
 			while (pch != NULL)
 			{
-				Google[cnt] = std::string(pch);
+				keyWordMap[11][cnt] = std::string(pch);
 				pch = strtok (NULL, ",");
 				cnt++;
 			}
@@ -432,7 +431,7 @@ void utilities::readKeyWord()
 
 			while (pch != NULL)
 			{
-				Youtube[cnt] = std::string(pch);
+				keyWordMap[12][cnt] = std::string(pch);
 				pch = strtok (NULL, ",");
 				cnt++;
 			}
@@ -448,7 +447,7 @@ void utilities::readKeyWord()
 
 			while (pch != NULL)
 			{
-				Games[cnt] = std::string(pch);
+				keyWordMap[13][cnt] = std::string(pch);
 				pch = strtok (NULL, ",");
 				cnt++;
 			}
@@ -464,7 +463,7 @@ void utilities::readKeyWord()
 
 		while (pch != NULL)
 		{
-			NetFlix[cnt] = std::string(pch);
+			keyWordMap[14][cnt] = std::string(pch);
 			pch = strtok (NULL, ",");
 			cnt++;
 			}
@@ -480,7 +479,7 @@ void utilities::readKeyWord()
 
 			while (pch != NULL)
 			{
-				Gmail[cnt] = std::string(pch);
+				keyWordMap[15][cnt] = std::string(pch);
 				pch = strtok (NULL, ",");
 				cnt++;
 			}
@@ -496,7 +495,7 @@ void utilities::readKeyWord()
 
 			while (pch != NULL)
 			{
-				Hotmail[cnt] = std::string(pch);
+				keyWordMap[16][cnt] = std::string(pch);
 				pch = strtok (NULL, ",");
 				cnt++;
 			}
@@ -512,7 +511,7 @@ void utilities::readKeyWord()
 
 			while (pch != NULL)
 			{
-				Microsoft[cnt] = std::string(pch);
+				keyWordMap[17][cnt] = std::string(pch);
 				pch = strtok (NULL, ",");
 				cnt++;
 			}
@@ -528,7 +527,7 @@ void utilities::readKeyWord()
 
 			while (pch != NULL)
 			{
-				Office365[cnt] = std::string(pch);
+				keyWordMap[18][cnt] = std::string(pch);
 				pch = strtok (NULL, ",");
 				cnt++;
 			}
@@ -544,7 +543,7 @@ void utilities::readKeyWord()
 
 			while (pch != NULL)
 			{
-				LinkedIn[cnt] = std::string(pch);
+				keyWordMap[19][cnt] = std::string(pch);
 				pch = strtok (NULL, ",");
 				cnt++;
 			}
@@ -560,7 +559,7 @@ void utilities::readKeyWord()
 
 			while (pch != NULL)
 			{
-				Webex[cnt] = std::string(pch);
+				keyWordMap[20][cnt] = std::string(pch);
 				pch = strtok (NULL, ",");
 				cnt++;
 			}
@@ -576,7 +575,7 @@ void utilities::readKeyWord()
 
 			while (pch != NULL)
 			{
-				Viber[cnt] = std::string(pch);
+				keyWordMap[21][cnt] = std::string(pch);
 				pch = strtok (NULL, ",");
 				cnt++;
 			}
@@ -592,7 +591,7 @@ void utilities::readKeyWord()
 
 			while (pch != NULL)
 			{
-				SocialNetwork[cnt] = std::string(pch);
+				keyWordMap[22][cnt] = std::string(pch);
 				pch = strtok (NULL, ",");
 				cnt++;
 			}
@@ -608,7 +607,7 @@ void utilities::readKeyWord()
 
 			while (pch != NULL)
 			{
-				ECommerce[cnt] = std::string(pch);
+				keyWordMap[23][cnt] = std::string(pch);
 				pch = strtok (NULL, ",");
 				cnt++;
 			}
@@ -624,7 +623,7 @@ void utilities::readKeyWord()
 
 			while (pch != NULL)
 			{
-				Travel[cnt] = std::string(pch);
+				keyWordMap[24][cnt] = std::string(pch);
 				pch = strtok (NULL, ",");
 				cnt++;
 			}
@@ -640,7 +639,7 @@ void utilities::readKeyWord()
 
 			while (pch != NULL)
 			{
-				FoodOrdering[cnt] = std::string(pch);
+				keyWordMap[25][cnt] = std::string(pch);
 				pch = strtok (NULL, ",");
 				cnt++;
 			}
@@ -656,7 +655,7 @@ void utilities::readKeyWord()
 
 			while (pch != NULL)
 			{
-				Twitter[cnt] = std::string(pch);
+				keyWordMap[26][cnt] = std::string(pch);
 				pch = strtok (NULL, ",");
 				cnt++;
 			}
@@ -672,7 +671,7 @@ void utilities::readKeyWord()
 
 			while (pch != NULL)
 			{
-				FileSharing[cnt] = std::string(pch);
+				keyWordMap[27][cnt] = std::string(pch);
 				pch = strtok (NULL, ",");
 				cnt++;
 			}
@@ -688,7 +687,7 @@ void utilities::readKeyWord()
 
 			while (pch != NULL)
 			{
-				Internet[cnt] = std::string(pch);
+				keyWordMap[28][cnt] = std::string(pch);
 				pch = strtok (NULL, ",");
 				cnt++;
 			}
@@ -704,7 +703,7 @@ void utilities::readKeyWord()
 
 			while (pch != NULL)
 			{
-				News[cnt] = std::string(pch);
+				keyWordMap[29][cnt] = std::string(pch);
 				pch = strtok (NULL, ",");
 				cnt++;
 			}
@@ -720,7 +719,7 @@ void utilities::readKeyWord()
 
 			while (pch != NULL)
 			{
-				Dropbox[cnt] = std::string(pch);
+				keyWordMap[30][cnt] = std::string(pch);
 				pch = strtok (NULL, ",");
 				cnt++;
 			}
@@ -736,7 +735,7 @@ void utilities::readKeyWord()
 
 			while (pch != NULL)
 			{
-				Browser[cnt] = std::string(pch);
+				keyWordMap[31][cnt] = std::string(pch);
 				pch = strtok (NULL, ",");
 				cnt++;
 			}
@@ -752,7 +751,7 @@ void utilities::readKeyWord()
 
 			while (pch != NULL)
 			{
-				Sports[cnt] = std::string(pch);
+				keyWordMap[32][cnt] = std::string(pch);
 				pch = strtok (NULL, ",");
 				cnt++;
 			}
@@ -768,7 +767,7 @@ void utilities::readKeyWord()
 
 			while (pch != NULL)
 			{
-				Bank[cnt] = std::string(pch);
+				keyWordMap[33][cnt] = std::string(pch);
 				pch = strtok (NULL, ",");
 				cnt++;
 			}
@@ -784,7 +783,7 @@ void utilities::readKeyWord()
 
 			while (pch != NULL)
 			{
-				Akamai[cnt] = std::string(pch);
+				keyWordMap[34][cnt] = std::string(pch);
 				pch = strtok (NULL, ",");
 				cnt++;
 			}
@@ -800,7 +799,7 @@ void utilities::readKeyWord()
 
 			while (pch != NULL)
 			{
-				GoDaddy[cnt] = std::string(pch);
+				keyWordMap[35][cnt] = std::string(pch);
 				pch = strtok (NULL, ",");
 				cnt++;
 			}
@@ -816,7 +815,7 @@ void utilities::readKeyWord()
 
 			while (pch != NULL)
 			{
-				Video[cnt] = std::string(pch);
+				keyWordMap[36][cnt] = std::string(pch);
 				pch = strtok (NULL, ",");
 				cnt++;
 			}
@@ -832,7 +831,7 @@ void utilities::readKeyWord()
 
 			while (pch != NULL)
 			{
-				Truecaller[cnt] = std::string(pch);
+				keyWordMap[37][cnt] = std::string(pch);
 				pch = strtok (NULL, ",");
 				cnt++;
 			}
@@ -848,7 +847,7 @@ void utilities::readKeyWord()
 
 			while (pch != NULL)
 			{
-				ISP[cnt] = std::string(pch);
+				keyWordMap[38][cnt] = std::string(pch);
 				pch = strtok (NULL, ",");
 				cnt++;
 			}
@@ -864,7 +863,7 @@ void utilities::readKeyWord()
 
 			while (pch != NULL)
 			{
-				SpeedTest[cnt] = std::string(pch);
+				keyWordMap[39][cnt] = std::string(pch);
 				pch = strtok (NULL, ",");
 				cnt++;
 			}
@@ -880,7 +879,7 @@ void utilities::readKeyWord()
 
 			while (pch != NULL)
 			{
-				AmazonPrime[cnt] = std::string(pch);
+				keyWordMap[40][cnt] = std::string(pch);
 				pch = strtok (NULL, ",");
 				cnt++;
 			}
@@ -896,7 +895,7 @@ void utilities::readKeyWord()
 
 			while (pch != NULL)
 			{
-				ALTBalaji[cnt] = std::string(pch);
+				keyWordMap[41][cnt] = std::string(pch);
 				pch = strtok (NULL, ",");
 				cnt++;
 			}
@@ -912,7 +911,7 @@ void utilities::readKeyWord()
 
 			while (pch != NULL)
 			{
-				BigFlix[cnt] = std::string(pch);
+				keyWordMap[42][cnt] = std::string(pch);
 				pch = strtok (NULL, ",");
 				cnt++;
 			}
@@ -928,7 +927,7 @@ void utilities::readKeyWord()
 
 			while (pch != NULL)
 			{
-				ErosNow[cnt] = std::string(pch);
+				keyWordMap[43][cnt] = std::string(pch);
 				pch = strtok (NULL, ",");
 				cnt++;
 			}
@@ -944,7 +943,7 @@ void utilities::readKeyWord()
 
 			while (pch != NULL)
 			{
-				Hotstar[cnt] = std::string(pch);
+				keyWordMap[44][cnt] = std::string(pch);
 				pch = strtok (NULL, ",");
 				cnt++;
 			}
@@ -960,7 +959,7 @@ void utilities::readKeyWord()
 
 			while (pch != NULL)
 			{
-				SonyLiv[cnt] = std::string(pch);
+				keyWordMap[45][cnt] = std::string(pch);
 				pch = strtok (NULL, ",");
 				cnt++;
 			}
@@ -976,7 +975,7 @@ void utilities::readKeyWord()
 
 			while (pch != NULL)
 			{
-				Voot[cnt] = std::string(pch);
+				keyWordMap[46][cnt] = std::string(pch);
 				pch = strtok (NULL, ",");
 				cnt++;
 			}
@@ -992,7 +991,7 @@ void utilities::readKeyWord()
 
 			while (pch != NULL)
 			{
-				YouNow[cnt] = std::string(pch);
+				keyWordMap[47][cnt] = std::string(pch);
 				pch = strtok (NULL, ",");
 				cnt++;
 			}
@@ -1008,7 +1007,7 @@ void utilities::readKeyWord()
 
 			while (pch != NULL)
 			{
-				Zee5[cnt] = std::string(pch);
+				keyWordMap[48][cnt] = std::string(pch);
 				pch = strtok (NULL, ",");
 				cnt++;
 			}
@@ -1024,7 +1023,7 @@ void utilities::readKeyWord()
 
 			while (pch != NULL)
 			{
-				Jio[cnt] = std::string(pch);
+				keyWordMap[49][cnt] = std::string(pch);
 				pch = strtok (NULL, ",");
 				cnt++;
 			}
@@ -1040,7 +1039,7 @@ void utilities::readKeyWord()
 
 			while (pch != NULL)
 			{
-				Instagram[cnt] = std::string(pch);
+				keyWordMap[50][cnt] = std::string(pch);
 				pch = strtok (NULL, ",");
 				cnt++;
 			}
@@ -1056,7 +1055,7 @@ void utilities::readKeyWord()
 
 			while (pch != NULL)
 			{
-				TIKTOK[cnt] = std::string(pch);
+				keyWordMap[51][cnt] = std::string(pch);
 				pch = strtok (NULL, ",");
 				cnt++;
 			}
@@ -1072,7 +1071,7 @@ void utilities::readKeyWord()
 
 			while (pch != NULL)
 			{
-				PUBG[cnt] = std::string(pch);
+				keyWordMap[52][cnt] = std::string(pch);
 				pch = strtok (NULL, ",");
 				cnt++;
 			}
@@ -1088,7 +1087,7 @@ void utilities::readKeyWord()
 
 			while (pch != NULL)
 			{
-				Uploadhaven[cnt] = std::string(pch);
+				keyWordMap[53][cnt] = std::string(pch);
 				pch = strtok (NULL, ",");
 				cnt++;
 			}
@@ -1104,7 +1103,7 @@ void utilities::readKeyWord()
 
 			while (pch != NULL)
 			{
-				DisneyPlus[cnt] = std::string(pch);
+				keyWordMap[54][cnt] = std::string(pch);
 				pch = strtok (NULL, ",");
 				cnt++;
 			}
@@ -1120,7 +1119,7 @@ void utilities::readKeyWord()
 
 			while (pch != NULL)
 			{
-				Zoom[cnt] = std::string(pch);
+				keyWordMap[55][cnt] = std::string(pch);
 				pch = strtok (NULL, ",");
 				cnt++;
 			}
@@ -1136,7 +1135,7 @@ void utilities::readKeyWord()
 
 			while (pch != NULL)
 			{
-				Adult[cnt] = std::string(pch);
+				keyWordMap[56][cnt] = std::string(pch);
 				pch = strtok (NULL, ",");
 				cnt++;
 			}
@@ -1152,14 +1151,12 @@ void utilities::readKeyWord()
 
 			while (pch != NULL)
 			{
-				Amazon[cnt] = std::string(pch);
+				keyWordMap[57][cnt] = std::string(pch);
 				pch = strtok (NULL, ",");
 				cnt++;
 			}
 			printf("Amazon Key Word Cnt = %d\n", cnt);
 		}
-
-
 	}
 }
 

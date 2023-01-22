@@ -27,7 +27,7 @@ class Baroda
 		uint8_t			barodaIndex;
 		uint64_t		recordCount;
 		pthread_t 		barodaThr;
-		char 			completePath[50];
+		char 			completePath[100];
 		ifstream 		inFile1;
 		ofstream        outFile;
 
@@ -36,9 +36,11 @@ class Baroda
 
 		void			startBarodaFun();
 		uint64_t		readBarodaResolvedIp(char *fileName);
-		void			dnsMapBarodaData(std::map<uint16_t, std::string> &appMap, uint16_t appId, std::map<uint32_t, std::string> &barodaMap);
+//		void			dnsMapBarodaData(std::map<uint16_t, std::string> &appMap, uint16_t appId, std::map<uint32_t, std::string> &barodaMap);
+		void			dnsMapBarodaData(uint16_t appId, std::map<uint32_t, std::string> &barodaMap);
 		void			updateBarodaResolvedIp(uint32_t ipr, string URL);
-		bool			checkUrl(std::map<uint16_t, std::string> &appMap, string url, uint16_t appID);
+//		bool			checkUrl(std::map<uint16_t, std::string> &appMap, string url, uint16_t appID);
+		bool			checkUrl(string url, uint16_t appID);
 
 		std::map<uint32_t, std::string> barodaResolvedIpMap[10];
 

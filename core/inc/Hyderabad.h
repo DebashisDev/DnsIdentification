@@ -28,7 +28,7 @@ class Hyderabad
 		uint64_t		recordCount;
 
 		pthread_t 		hyderabadThr;
-		char 			completePath[50];
+		char 			completePath[100];
 		ifstream 		inFile;
 		ofstream        outFile;
 
@@ -37,12 +37,11 @@ class Hyderabad
 
 		void			startHyderabadFun();
 		uint64_t		readHyderabadResolvedIp(char *fileName);
-		void			dnsMapHyderabadData(std::map<uint16_t, std::string> &appMap, uint16_t appId, std::map<uint32_t, std::string> &barodaMap);
+		void			dnsMapHyderabadData(uint16_t appId, std::map<uint32_t, std::string> &barodaMap);
 		void			updateHyderabadResolvedIp(uint32_t ipr, string URL);
-		bool			checkUrl(std::map<uint16_t, std::string> &appMap, string url, uint16_t appID);
+		bool			checkUrl(string url, uint16_t appID);
 
 		std::map<uint32_t, std::string> hyderabadResolvedIpMap[10];
-		std::map<std::string, uint16_t> dnsLookUpHyderabadData[57];
 };
 
 #endif /* DNSIDENTIFICATION_CORE_SRC_HYDERABAD_H_ */

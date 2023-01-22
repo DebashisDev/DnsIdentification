@@ -32,7 +32,7 @@ void Surat::startSuratFun()
 	outFile.open("SuratAppDnsData.csv", ios::app);
 
 #ifdef _SURAT
-	printf(" Start Processing Surat Thread .. Time : %s \n", util->timerfunc());
+	printf(" Start Surat Thread .. Time : %s \n", util->timerfunc());
 	util->openDnsKeyFile((char *)"dnsKeyword.conf");
 	util->readKeyWord();
 	util->closeDnsKeyFile();
@@ -41,111 +41,110 @@ void Surat::startSuratFun()
 	sprintf(completePath,"%s/%s", util->getSuratPath().c_str(), util->getFileName().c_str());
 	uint64_t count = readSuratResolvedIp(completePath);
 
-	printf("Completed Dumping Surat DNS Resolved Ips with count : %llu ..time: %s\n", count, util->timerfunc());
+	printf(" Completed Dumping Surat DNS Resolved Ips with count : %llu ..time: %s\n", count, util->timerfunc());
 	recordCount = 0;
 
 	for(uint16_t mapIndex = 0; mapIndex <= 9; mapIndex++)
 	{
-		printf("Size of SuratResolvedIpMap Index %02d = %02d....time: %s\n", mapIndex, suratResolvedIpMap[mapIndex].size(),util->timerfunc());
+		printf(" Size of Surat DNS Resolved Ip Map Index %02d = %02d....time: %s\n", mapIndex, suratResolvedIpMap[mapIndex].size(),util->timerfunc());
 
-			/* Data Mapping */
-			dnsMapSuratData(util->YahooMail, 1,suratResolvedIpMap[mapIndex]);
-			dnsMapSuratData(util->Music, 2,suratResolvedIpMap[mapIndex]);
-			dnsMapSuratData(util->CloudProvider, 3,suratResolvedIpMap[mapIndex]);
-			dnsMapSuratData(util->Stock, 4,suratResolvedIpMap[mapIndex]);
-			dnsMapSuratData(util->Yahoo, 5,suratResolvedIpMap[mapIndex]);
-			dnsMapSuratData(util->MSN, 6,suratResolvedIpMap[mapIndex]);
-			dnsMapSuratData(util->Apple, 7,suratResolvedIpMap[mapIndex]);
-			dnsMapSuratData(util->Skype, 8,suratResolvedIpMap[mapIndex]);
-			dnsMapSuratData(util->Facebook, 9,suratResolvedIpMap[mapIndex]);
-			dnsMapSuratData(util->Whatsapp, 10,suratResolvedIpMap[mapIndex]);
-			dnsMapSuratData(util->Google, 11,suratResolvedIpMap[mapIndex]);
-			dnsMapSuratData(util->Youtube, 12,suratResolvedIpMap[mapIndex]);
-			dnsMapSuratData(util->Games, 13,suratResolvedIpMap[mapIndex]);
-			dnsMapSuratData(util->NetFlix, 14,suratResolvedIpMap[mapIndex]);
-			dnsMapSuratData(util->Gmail, 15,suratResolvedIpMap[mapIndex]);
-			dnsMapSuratData(util->Hotmail, 16,suratResolvedIpMap[mapIndex]);
-			dnsMapSuratData(util->Microsoft, 17,suratResolvedIpMap[mapIndex]);
-			dnsMapSuratData(util->Office365, 18,suratResolvedIpMap[mapIndex]);
-			dnsMapSuratData(util->LinkedIn, 19,suratResolvedIpMap[mapIndex]);
-			dnsMapSuratData(util->Webex, 20,suratResolvedIpMap[mapIndex]);
-			dnsMapSuratData(util->Viber, 21,suratResolvedIpMap[mapIndex]);
-			dnsMapSuratData(util->SocialNetwork, 22,suratResolvedIpMap[mapIndex]);
-			dnsMapSuratData(util->ECommerce, 23,suratResolvedIpMap[mapIndex]);
-			dnsMapSuratData(util->Travel, 24,suratResolvedIpMap[mapIndex]);
-			dnsMapSuratData(util->FoodOrdering, 25,suratResolvedIpMap[mapIndex]);
-			dnsMapSuratData(util->Twitter, 26,suratResolvedIpMap[mapIndex]);
-			dnsMapSuratData(util->FileSharing, 27,suratResolvedIpMap[mapIndex]);
-			dnsMapSuratData(util->Internet, 28,suratResolvedIpMap[mapIndex]);
-			dnsMapSuratData(util->News, 29,suratResolvedIpMap[mapIndex]);
-			dnsMapSuratData(util->Dropbox, 30,suratResolvedIpMap[mapIndex]);
-			dnsMapSuratData(util->Browser, 31,suratResolvedIpMap[mapIndex]);
-			dnsMapSuratData(util->Sports, 32,suratResolvedIpMap[mapIndex]);
-			dnsMapSuratData(util->Bank, 33,suratResolvedIpMap[mapIndex]);
-			dnsMapSuratData(util->Akamai, 34,suratResolvedIpMap[mapIndex]);
-			dnsMapSuratData(util->GoDaddy, 35,suratResolvedIpMap[mapIndex]);
-			dnsMapSuratData(util->Video, 36,suratResolvedIpMap[mapIndex]);
-			dnsMapSuratData(util->Truecaller, 37,suratResolvedIpMap[mapIndex]);
-			dnsMapSuratData(util->ISP, 38,suratResolvedIpMap[mapIndex]);
-			dnsMapSuratData(util->SpeedTest, 39,suratResolvedIpMap[mapIndex]);
-			dnsMapSuratData(util->AmazonPrime, 40,suratResolvedIpMap[mapIndex]);
-			dnsMapSuratData(util->ALTBalaji, 41,suratResolvedIpMap[mapIndex]);
-			dnsMapSuratData(util->BigFlix, 42,suratResolvedIpMap[mapIndex]);
-			dnsMapSuratData(util->ErosNow, 43,suratResolvedIpMap[mapIndex]);
-			dnsMapSuratData(util->Hotstar, 44,suratResolvedIpMap[mapIndex]);
-			dnsMapSuratData(util->SonyLiv, 45,suratResolvedIpMap[mapIndex]);
-			dnsMapSuratData(util->Voot, 46,suratResolvedIpMap[mapIndex]);
-			dnsMapSuratData(util->YouNow, 47,suratResolvedIpMap[mapIndex]);
-			dnsMapSuratData(util->Zee5, 48,suratResolvedIpMap[mapIndex]);
-			dnsMapSuratData(util->Jio, 49,suratResolvedIpMap[mapIndex]);
-			dnsMapSuratData(util->Instagram, 50,suratResolvedIpMap[mapIndex]);
-			dnsMapSuratData(util->TIKTOK, 51,suratResolvedIpMap[mapIndex]);
-			dnsMapSuratData(util->PUBG, 52,suratResolvedIpMap[mapIndex]);
-			dnsMapSuratData(util->Uploadhaven, 53,suratResolvedIpMap[mapIndex]);
-			dnsMapSuratData(util->DisneyPlus, 54,suratResolvedIpMap[mapIndex]);
-			dnsMapSuratData(util->Zoom, 55,suratResolvedIpMap[mapIndex]);
-			dnsMapSuratData(util->Adult, 56,suratResolvedIpMap[mapIndex]);
-			dnsMapSuratData(util->Amazon, 57,suratResolvedIpMap[mapIndex]);
+		/* Data Mapping */
+		dnsMapSuratData(1, suratResolvedIpMap[mapIndex]);
+		dnsMapSuratData(2, suratResolvedIpMap[mapIndex]);
+		dnsMapSuratData(3, suratResolvedIpMap[mapIndex]);
+		dnsMapSuratData(4, suratResolvedIpMap[mapIndex]);
+		dnsMapSuratData(5, suratResolvedIpMap[mapIndex]);
+		dnsMapSuratData(6, suratResolvedIpMap[mapIndex]);
+		dnsMapSuratData(7, suratResolvedIpMap[mapIndex]);
+		dnsMapSuratData(8, suratResolvedIpMap[mapIndex]);
+		dnsMapSuratData(9, suratResolvedIpMap[mapIndex]);
+		dnsMapSuratData(10, suratResolvedIpMap[mapIndex]);
+		dnsMapSuratData(11, suratResolvedIpMap[mapIndex]);
+		dnsMapSuratData(12, suratResolvedIpMap[mapIndex]);
+		dnsMapSuratData(13, suratResolvedIpMap[mapIndex]);
+		dnsMapSuratData(14, suratResolvedIpMap[mapIndex]);
+		dnsMapSuratData(15, suratResolvedIpMap[mapIndex]);
+		dnsMapSuratData(16, suratResolvedIpMap[mapIndex]);
+		dnsMapSuratData(17, suratResolvedIpMap[mapIndex]);
+		dnsMapSuratData(18, suratResolvedIpMap[mapIndex]);
+		dnsMapSuratData(19, suratResolvedIpMap[mapIndex]);
+		dnsMapSuratData(20, suratResolvedIpMap[mapIndex]);
+		dnsMapSuratData(21, suratResolvedIpMap[mapIndex]);
+		dnsMapSuratData(22, suratResolvedIpMap[mapIndex]);
+		dnsMapSuratData(23, suratResolvedIpMap[mapIndex]);
+		dnsMapSuratData(24, suratResolvedIpMap[mapIndex]);
+		dnsMapSuratData(25, suratResolvedIpMap[mapIndex]);
+		dnsMapSuratData(26, suratResolvedIpMap[mapIndex]);
+		dnsMapSuratData(27, suratResolvedIpMap[mapIndex]);
+		dnsMapSuratData(28, suratResolvedIpMap[mapIndex]);
+		dnsMapSuratData(29, suratResolvedIpMap[mapIndex]);
+		dnsMapSuratData(30, suratResolvedIpMap[mapIndex]);
+		dnsMapSuratData(31, suratResolvedIpMap[mapIndex]);
+		dnsMapSuratData(32, suratResolvedIpMap[mapIndex]);
+		dnsMapSuratData(33, suratResolvedIpMap[mapIndex]);
+		dnsMapSuratData(34, suratResolvedIpMap[mapIndex]);
+		dnsMapSuratData(35, suratResolvedIpMap[mapIndex]);
+		dnsMapSuratData(36, suratResolvedIpMap[mapIndex]);
+		dnsMapSuratData(37, suratResolvedIpMap[mapIndex]);
+		dnsMapSuratData(38, suratResolvedIpMap[mapIndex]);
+		dnsMapSuratData(39, suratResolvedIpMap[mapIndex]);
+		dnsMapSuratData(40, suratResolvedIpMap[mapIndex]);
+		dnsMapSuratData(41, suratResolvedIpMap[mapIndex]);
+		dnsMapSuratData(42, suratResolvedIpMap[mapIndex]);
+		dnsMapSuratData(43, suratResolvedIpMap[mapIndex]);
+		dnsMapSuratData(44, suratResolvedIpMap[mapIndex]);
+		dnsMapSuratData(45, suratResolvedIpMap[mapIndex]);
+		dnsMapSuratData(46, suratResolvedIpMap[mapIndex]);
+		dnsMapSuratData(47, suratResolvedIpMap[mapIndex]);
+		dnsMapSuratData(48, suratResolvedIpMap[mapIndex]);
+		dnsMapSuratData(49, suratResolvedIpMap[mapIndex]);
+		dnsMapSuratData(50, suratResolvedIpMap[mapIndex]);
+		dnsMapSuratData(51, suratResolvedIpMap[mapIndex]);
+		dnsMapSuratData(52, suratResolvedIpMap[mapIndex]);
+		dnsMapSuratData(53, suratResolvedIpMap[mapIndex]);
+		dnsMapSuratData(54, suratResolvedIpMap[mapIndex]);
+		dnsMapSuratData(55, suratResolvedIpMap[mapIndex]);
+		dnsMapSuratData(56, suratResolvedIpMap[mapIndex]);
+		dnsMapSuratData(57, suratResolvedIpMap[mapIndex]);
 
-			printf("Remaining Size of suratResolvedIpMap Index %02d = %02d....\n", mapIndex, suratResolvedIpMap[mapIndex].size());
+			printf(" Remaining Size of Surat DNS Resolved Ip Map Index %02d = %02d....\n", mapIndex, suratResolvedIpMap[mapIndex].size());
 	}
 
-	suratFlag= true;
 #endif
 
 	outFile.close();
+	suratFlag= true;
+	bool printFlag = false;
 
 	while(true)
 	{
 		sleep (5);
 
-		if(suratFlag)
+		if(suratFlag && !printFlag)
 		{
-			printf("Surat Child Completed the Process ..\n");
+			printf(" Surat Child Completed the Process ..\n");
+			printFlag = true;
 		}
 	}
 }
 
-void Surat::dnsMapSuratData(std::map<uint16_t, std::string> &appMap, uint16_t appID, std::map<uint32_t, std::string> &suratMap)
+void Surat::dnsMapSuratData(uint16_t appID, std::map<uint32_t, std::string> &suratMap)
 {
-
 	for (auto it = suratMap.cbegin(), next_it = it; it != suratMap.cend(); it = next_it)
 	{
-		if(checkUrl(appMap, it->second, appID))
+		if(checkUrl(it->second, appID))
 		{
-		 ++next_it;
-		 suratMap.erase(it);
+			++next_it;
+			suratMap.erase(it);
 		}
 		else
-		{
-			 ++next_it;
-		}
+		{ ++next_it; }
 	}
 }
 
-bool Surat::checkUrl(std::map<uint16_t, std::string> &appMap, string url, uint16_t appID)
+bool Surat::checkUrl(string url, uint16_t appID)
 {
-	for (auto it = appMap.cbegin(), next_it = it; it != appMap.cend(); it = next_it)
+	for (auto it = util->keyWordMap[appID].cbegin(), next_it = it; it != util->keyWordMap[appID].cend(); it = next_it)
 	{
 		if(strstr(url.c_str(), it->second.c_str()))
 		{
