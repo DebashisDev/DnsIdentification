@@ -7,10 +7,10 @@
 
 #include "utilities.h"
 
+
 utilities::utilities()
 {
 	timeStr[0] = 0;
-
 }
 
 utilities::~utilities()

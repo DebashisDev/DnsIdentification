@@ -49,10 +49,9 @@ void Surat::startSuratFun()
 		printf(" Size of Surat DNS Resolved Ip Map Index %02d = %02d....time: %s\n", mapIndex, suratResolvedIpMap[mapIndex].size(),util->timerfunc());
 
 		/* Data Mapping */
-		for(uint16_t appId = 1; appId <= 57; appId++)
-		{
+		for(uint16_t appId = 1; appId <= MAX_APPLICATIONS; appId++)
 			dnsMapSuratData(appId, suratResolvedIpMap[mapIndex]);
-		}
+
 		printf(" Remaining Size of Surat DNS Resolved Ip Map Index %02d = %02d....\n", mapIndex, suratResolvedIpMap[mapIndex].size());
 	}
 

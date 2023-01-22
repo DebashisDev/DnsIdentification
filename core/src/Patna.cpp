@@ -49,10 +49,9 @@ void Patna::startPatnaFun()
 		printf(" Size of Patna DNS Resolved Ip Map Index %02d = %02d....time: %s\n", mapIndex, patnaResolvedIpMap[mapIndex].size(),util->timerfunc());
 
 		/* Data Mapping */
-		for(uint16_t appId = 1; appId <= 57; appId++)
-		{
+		for(uint16_t appId = 1; appId <= MAX_APPLICATIONS; appId++)
 			dnsMapPatnaData(appId, patnaResolvedIpMap[mapIndex]);
-		}
+
 		printf(" Remaining Size of Patna DNS Resolved Ip Map Index %02d = %02d....\n", mapIndex, patnaResolvedIpMap[mapIndex].size());
 	}
 

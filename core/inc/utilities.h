@@ -10,6 +10,8 @@
 
 #include "global.h"
 
+#define MAX_APPLICATIONS 57
+
 using namespace std;
 
 class utilities

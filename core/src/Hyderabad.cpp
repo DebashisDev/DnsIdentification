@@ -49,10 +49,9 @@ void Hyderabad::startHyderabadFun()
 		printf(" Size of Hyderabad DNS Resolved Ip Map Index %02d = %02d....time: %s\n", mapIndex, hyderabadResolvedIpMap[mapIndex].size(),util->timerfunc());
 
 		/* Data Mapping */
-		for(uint16_t appId = 1; appId <= 57; appId++)
-		{
+		for(uint16_t appId = 1; appId <= MAX_APPLICATIONS; appId++)
 			dnsMapHyderabadData(appId, hyderabadResolvedIpMap[mapIndex]);
-		}
+
 		printf(" Remaining Size of Hyderabad DNS Resolved Ip Map Index %02d = %02d....\n", mapIndex, hyderabadResolvedIpMap[mapIndex].size());
 	}
 #endif
