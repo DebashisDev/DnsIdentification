@@ -101,10 +101,10 @@ int main()
 
 	while(true)
 	{
-		printf("Parent Thread ..\n");
+		printf(" Parent Thread ..\n");
 		sleep(50);
 
-		printf("BarodaFlag =  %d : RajkotFlag = %d : SuratFlag = %d : PatnaFlag = %d : HyderabadFlag = %d \n ",
+		printf(" BarodaFlag =  %d : RajkotFlag = %d : SuratFlag = %d : PatnaFlag = %d : HyderabadFlag = %d \n ",
 				baroda->barodaFlag,rajkot->rajkotFlag,surat->suratFlag,patna->patnaFlag,hyd->hyderabadFlag);
 
 		if(baroda->barodaFlag && rajkot->rajkotFlag && surat->suratFlag && patna->patnaFlag && hyd->hyderabadFlag)
@@ -112,7 +112,7 @@ int main()
 			/*Baroda Data Dump*/
 
 			baroda->outFile.open("BarodaAppDnsData.csv", ios::app);
-			printf("Start Dumping of Baroda Data.....\n");
+			printf(" Start Dumping of Baroda Data..... ");
 
 			for(uint16_t mapIndex = 0; mapIndex < 10; mapIndex++)
 			{
@@ -120,13 +120,13 @@ int main()
 					baroda->outFile << elem1.second << "| " << "IP2IP" << endl ;
 			}
 
-			printf("Dumping Of Baroda Data is Done.....\n");
+			printf(" Done.\n");
 			baroda->outFile.close();
 
 			/*Rajkot Data Dump*/
 
 			rajkot->outFile.open("RajkotAppDnsData.csv", ios::app);
-			printf("Start Dumping of Rajkot Data.....\n");
+			printf(" Start Dumping of Rajkot Data..... ");
 
 			for(uint16_t mapIndex = 0; mapIndex < 10; mapIndex++)
 			{
@@ -134,14 +134,14 @@ int main()
 					rajkot->outFile << elem1.second << "| " << "IP2IP" << endl ;
 			}
 
-			printf("Dumping Of Rajkot Data is Done.....\n");
+			printf(" Done.\n");
 			rajkot->outFile.close();
 
 
 			/*Surat Data Dump*/
 
 			surat->outFile.open("SuratAppDnsData.csv", ios::app);
-			printf("Start Dumping of Surat Data.....\n");
+			printf(" Start Dumping of Surat Data..... ");
 
 			for(uint16_t mapIndex = 0; mapIndex < 10; mapIndex++)
 			{
@@ -149,13 +149,13 @@ int main()
 					surat->outFile << elem1.second << "| " << "IP2IP" << endl ;
 			}
 
-			printf("Dumping Of Surat Data is Done.....\n");
+			printf(" Done.\n");
 			surat->outFile.close();
 
 			/*Patna Data Dump*/
 
 			patna->outFile.open("PatnaAppDnsData.csv", ios::app);
-			printf("Start Dumping of patna Data.....\n");
+			printf(" Start Dumping of patna Data..... ");
 
 			for(uint16_t mapIndex = 0; mapIndex < 10; mapIndex++)
 			{
@@ -163,13 +163,13 @@ int main()
 					patna->outFile << elem1.second << "| " << "IP2IP" << endl ;
 			}
 
-			printf("Dumping Of patna Data is Done.....\n");
+			printf(" Done.\n");
 			patna->outFile.close();
 
 			/*Hyderabad Data Dump*/
 
 			hyd->outFile.open("HyderabadAppDnsData.csv", ios::app);
-			printf("Start Dumping of Hyderabad Data.....\n");
+			printf(" Start Dumping of Hyderabad Data..... ");
 
 			for(uint16_t mapIndex = 0; mapIndex < 10; mapIndex++)
 			{
@@ -177,8 +177,10 @@ int main()
 					hyd->outFile << elem1.second << "| " << "IP2IP" << endl ;
 			}
 
-			printf("Dumping Of hyderabad Data is Done.....\n");
+			printf(" Done.\n");
 			hyd->outFile.close();
+
+			printf(" \n\n *** Going to Shutdown !!! ******* \n\n");
 
 			exit(1);
 		}
